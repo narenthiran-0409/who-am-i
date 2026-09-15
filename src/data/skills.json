@@ -1,0 +1,26 @@
+[
+  {
+    "id": "react",
+    "name": "React",
+    "category": "Frontend",
+    "icon": "cube"
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "category": "Language",
+    "icon": "code"
+  },
+  {
+    "id": "node",
+    "name": "Node.js",
+    "category": "Backend",
+    "icon": "terminal"
+  },
+  {
+    "id": "next",
+    "name": "Next.js",
+    "category": "Framework",
+    "icon": "layers"
+  }
+]

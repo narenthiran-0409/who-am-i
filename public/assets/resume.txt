@@ -1,0 +1,25 @@
+SAMPLE RESUME — Content reproduced from the supplied design. Replace with your own information before sharing.
+
+Heisgn Berg
+Senior Software Architect
+
+ABOUT
+I'm currently doing my Master's degree in Information technology @ Latvian University of Life science and technology. I've started coding at the age of 16. My passions lie in Web designing and Web development, as well as some extra kinds of stuff, and I look forward to combining these to succeed in my future career.
+
+SKILLS
+React (Frontend), TypeScript (Language), Node.js (Backend), Next.js (Framework)
+
+EXPERIENCE
+Senior Software Developer | Tech Solutions | Jan 2024 – Present
+Developed scalable enterprise applications using modern cloud architectures.
+
+EDUCATION
+Master’s in IT | University of Life Sciences | 2022 — Present
+Specializing in advanced information systems and software architecture.
+
+Bachelor’s in CS | Technical Institute | 2018 — 2022
+Foundational studies in computer science, algorithms, and data structures.
+
+CONTACT
+PHONE: +91-9342206740
+EMAIL: narenthiran.dll@gmail.com

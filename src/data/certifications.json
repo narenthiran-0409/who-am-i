@@ -1,0 +1,29 @@
+[
+  {
+    "id": "aws-solutions-architect",
+    "title": "AWS Certified Solutions Architect",
+    "description": "Professional-level certification for designing distributed systems on AWS.",
+    "tags": ["Cloud", "Infrastructure"],
+    "icon": "cloud",
+    "image": null,
+    "credentialUrl": null
+  },
+  {
+    "id": "google-cloud-developer",
+    "title": "Google Professional Cloud Developer",
+    "description": "Certified expertise in building scalable applications on Google Cloud.",
+    "tags": ["GCP", "Development"],
+    "icon": "chip",
+    "image": null,
+    "credentialUrl": null
+  },
+  {
+    "id": "azure-solutions-architect",
+    "title": "Azure Solutions Architect Expert",
+    "description": "Advanced skills in designing hybrid solutions that run on Microsoft Azure.",
+    "tags": ["Azure", "Enterprise"],
+    "icon": "badge",
+    "image": null,
+    "credentialUrl": null
+  }
+]

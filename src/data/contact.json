@@ -1,0 +1,43 @@
+{
+  "eyebrow": "READY_FOR_COLLABORATION",
+  "title": "Contact",
+  "recipient": "narenthiran.dll@gmail.com",
+  "subject": "Portfolio inquiry",
+  "submit": "EXECUTE_SEND",
+  "helper": "Opens your email app with a draft for you to review and send.",
+  "prepared": "Your email draft is ready. If your email app did not open, copy the message below.",
+  "copy": "COPY_MESSAGE",
+  "copied": "COPIED",
+  "copyFailed": "Copy is unavailable. Select and copy your message below.",
+  "draftLabel": "Your message",
+  "fields": [
+    {
+      "name": "name",
+      "label": "FULL_NAME",
+      "placeholder": "John Doe",
+      "type": "text",
+      "autocomplete": "name",
+      "maxLength": 120
+    },
+    {
+      "name": "email",
+      "label": "EMAIL_ADDR",
+      "placeholder": "john@example.com",
+      "type": "email",
+      "autocomplete": "email",
+      "maxLength": 254
+    },
+    {
+      "name": "message",
+      "label": "MESSAGE_INPUT",
+      "placeholder": "Briefly describe your requirements...",
+      "type": "textarea",
+      "maxLength": 5000
+    }
+  ],
+  "errors": {
+    "name": "Please enter your name.",
+    "email": "Please enter a valid email address.",
+    "message": "Please describe your requirements."
+  }
+}

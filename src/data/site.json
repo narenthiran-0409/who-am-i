@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "Heisgn Berg | Developer Portfolio",
+    "description": "Software architecture, web development, and modern digital experiences. Explore my skills, certifications, and career journey.",
+    "language": "en"
+  },
+  "navigation": {
+    "label": "Portfolio navigation",
+    "open": "Open navigation",
+    "close": "Close navigation",
+    "skip": "Skip to content",
+    "items": [
+      {
+        "label": "Home",
+        "target": "hero"
+      },
+      {
+        "label": "About",
+        "target": "about"
+      },
+      {
+        "label": "Certifications",
+        "target": "certifications"
+      },
+      {
+        "label": "Skills",
+        "target": "skills"
+      },
+      {
+        "label": "Journey",
+        "target": "experience-education"
+      },
+      {
+        "label": "Contact",
+        "target": "contact"
+      }
+    ]
+  },
+  "sections": {
+    "about": {
+      "eyebrow": "About",
+      "title": "Welcome! I’m White"
+    },
+    "certifications": {
+      "eyebrow": "Certifications",
+      "title": "Professional Certifications"
+    },
+    "skills": {
+      "eyebrow": "Skills",
+      "title": "Core Technologies"
+    },
+    "journey": {
+      "eyebrow": "Journey",
+      "title": "Career & Growth"
+    },
+    "projects": {
+      "eyebrow": "Projects",
+      "title": "Selected Work"
+    }
+  },
+  "labels": {
+    "personalData": "PERSONAL_DATA_MATRIX",
+    "downloadResume": "Download Resume",
+    "viewCertificate": "VIEW_CERTIFICATE",
+    "viewProject": "VIEW_PROJECT",
+    "previous": "Previous",
+    "next": "Next",
+    "close": "Close details",
+    "certificateNotice": "This entry is sample content from the supplied design. A verified certificate has not been provided.",
+    "projectSource": "SOURCE_CODE",
+    "projectsNavigation": "Projects"
+  },
+  "footer": {
+    "quote": "கிடைக்கிறது கிடைக்காம இருக்காது, கிடைக்காம இருக்கிறது கிடைக்காது!",
+    "language": "ta",
+    "translation": "What is meant for you will never fail to reach you; what is not meant for you will never truly become yours.",
+    "translationLanguage": "en",
+    "showTranslation": "SEE_TRANSLATION",
+    "hideTranslation": "SHOW_TAMIL"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "name": "Heisgn Berg",
+  "greeting": "Hello World",
+  "intro": "I’m Heisgn Berg",
+  "role": "Senior Software Architect",
+  "summary": [
+    {
+      "text": "Senior Software Architect specializing in "
+    },
+    {
+      "text": "technical precision",
+      "emphasis": true
+    },
+    {
+      "text": " and modern digital experiences. I transform complex problems into sleek, efficient, scalable code architectures."
+    }
+  ],
+  "heroImage": null,
+  "portrait": {
+    "src": "/assets/profile.png",
+    "alt": "Portrait from the supplied portfolio design"
+  },
+  "aboutRole": "UI/UX Designer & Web Developer",
+  "biography": [
+    "I'm currently doing my Master's degree in Information technology @ Latvian University of Life science and technology. I've started coding at the age of 16. My passions lie in Web designing and Web development, as well as some extra kinds of stuff, and I look forward to combining these to succeed in my future career."
+  ],
+  "facts": [
+    {
+      "label": "BIRTHDAY",
+      "value": "04 Sept 2004",
+      "icon": "calendar",
+      "href": null
+    },
+    {
+      "label": "AGE",
+      "value": "22",
+      "icon": "cake",
+      "href": null
+    },
+    {
+      "label": "PHONE",
+      "value": "+91-9342206740",
+      "icon": "phone",
+      "href": "tel:+919342206740"
+    },
+    {
+      "label": "EMAIL",
+      "value": "narenthiran.dll@gmail.com",
+      "icon": "mail",
+      "href": "mailto:narenthiran.dll@gmail.com"
+    },
+    {
+      "label": "CITY",
+      "value": "Lisbon, Portugal",
+      "icon": "pin",
+      "href": null
+    },
+    {
+      "label": "DEGREE",
+      "value": "M.sc., Computer Systems",
+      "icon": "school",
+      "href": null
+    }
+  ],
+  "socialLinks": [
+    {
+      "label": "GitHub",
+      "icon": "terminal",
+      "href": "https://github.com/narenthiran-0409"
+    },
+    {
+      "label": "About me",
+      "icon": "link",
+      "href": "#about"
+    },
+    {
+      "label": "Email",
+      "icon": "mail",
+      "href": "mailto:narenthiran.dll@gmail.com"
+    }
+  ],
+  "resume": {
+    "url": null,
+    "filename": "heisgn-berg-resume.txt",
+    "sampleNotice": "SAMPLE RESUME — Content reproduced from the supplied design. Replace with your own information before sharing.",
+    "headings": {
+      "about": "ABOUT",
+      "skills": "SKILLS",
+      "experience": "EXPERIENCE",
+      "education": "EDUCATION",
+      "contact": "CONTACT"
+    },
+    "generatedUrl": "/assets/resume.txt"
+  }
+}

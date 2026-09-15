@@ -1,0 +1,37 @@
+{
+  "educationLabel": "ACADEMIC_QUALIFICATIONS",
+  "experienceLabel": "PROFESSIONAL_EXPERIENCE",
+  "education": [
+    {
+      "id": "masters",
+      "title": "Master’s in IT",
+      "organization": "University of Life Sciences",
+      "period": "2022 — Present",
+      "description": "Specializing in advanced information systems and software architecture.",
+      "logo": null,
+      "icon": "school"
+    },
+    {
+      "id": "bachelors",
+      "title": "Bachelor’s in CS",
+      "organization": "Technical Institute",
+      "period": "2018 — 2022",
+      "description": "Foundational studies in computer science, algorithms, and data structures.",
+      "logo": null,
+      "icon": "school"
+    }
+  ],
+  "experience": [
+    {
+      "id": "tech-solutions",
+      "title": "Senior Software Developer",
+      "organization": "Tech Solutions",
+      "period": "Jan 2024 – Present",
+      "highlights": [
+        "Developed scalable enterprise applications using modern cloud architectures."
+      ],
+      "logo": null,
+      "icon": "briefcase"
+    }
+  ]
+}
