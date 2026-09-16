@@ -1,13 +1,11 @@
 import Icon from "./Icon";
 import SmartLink from "./SmartLink";
+import HeroHeading from "./HeroHeading";
 export default function Hero({ profile }) {
   return (
     <section id="hero" tabIndex={-1} className="hero container">
       <div className="hero-copy">
-        <h1>
-          {profile.greeting}
-          <span>{profile.intro}</span>
-        </h1>
+        <HeroHeading greeting={profile.greeting} intro={profile.intro} />
         <p>
           {profile.summary.map((part, i) =>
             part.emphasis ? (

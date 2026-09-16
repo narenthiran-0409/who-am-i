@@ -158,10 +158,113 @@ button:hover {
   line-height: 1.25;
   letter-spacing: -0.02em;
 }
-.hero h1 span {
+.hero-hello {
+  position: relative;
+  display: inline-block;
+}
+.hero-word {
+  display: inline-block;
+}
+.hero-letter {
+  --hero-scale-start: 1.5;
+  --hero-scale-mid: 1.06;
+  --hero-glow-blur: 18px;
+  display: inline-block;
+  opacity: 1;
+  transform: scale(1);
+  color: var(--text);
+  -webkit-text-stroke: 0 transparent;
+  text-shadow: none;
+  animation: hero-letter-in 650ms cubic-bezier(0.16, 0.84, 0.44, 1) both;
+  animation-delay: calc(var(--i) * 40ms);
+}
+.hero-sweep {
+  position: absolute;
+  inset: -12% -4%;
+  background: linear-gradient(
+    100deg,
+    transparent 42%,
+    #eafdffcc 50%,
+    transparent 58%
+  );
+  mix-blend-mode: overlay;
+  opacity: 0;
+  pointer-events: none;
+  animation: hero-sweep-pass 700ms ease-out both;
+  animation-delay: 900ms;
+}
+.hero-name {
   display: block;
   color: var(--cyan);
   margin-top: 8px;
+}
+.hero-name-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.hero-name-word {
+  display: inline-block;
+  transform: translateY(0);
+  opacity: 1;
+  animation: hero-name-in 820ms cubic-bezier(0.16, 0.84, 0.44, 1) both;
+  animation-delay: calc(1600ms + var(--i) * 70ms);
+}
+@keyframes hero-letter-in {
+  0% {
+    opacity: 0;
+    transform: scale(var(--hero-scale-start));
+    color: transparent;
+    -webkit-text-stroke: 1px var(--cyan);
+    text-shadow:
+      0 0 var(--hero-glow-blur) #00dbe799,
+      0 0 4px #00dbe7;
+  }
+  55% {
+    opacity: 1;
+    transform: scale(var(--hero-scale-mid));
+    color: transparent;
+    -webkit-text-stroke: 1px var(--cyan);
+    text-shadow: 0 0 calc(var(--hero-glow-blur) * 0.55) #00dbe766;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--text);
+    -webkit-text-stroke: 0 transparent;
+    text-shadow: none;
+  }
+}
+@keyframes hero-sweep-pass {
+  0% {
+    opacity: 0;
+    transform: translateX(-120%);
+  }
+  15% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(70%);
+  }
+  75% {
+    opacity: 0;
+    transform: translateX(120%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+@keyframes hero-name-in {
+  0% {
+    transform: translateY(115%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 .hero p {
   font-size: 1.125rem;
@@ -1011,6 +1114,14 @@ textarea[aria-invalid="true"] {
     font-size: 2.5rem;
     line-height: 1.2;
     letter-spacing: -0.01em;
+  }
+  .hero-letter {
+    --hero-scale-start: 1.22;
+    --hero-scale-mid: 1.03;
+    --hero-glow-blur: 10px;
+  }
+  .hero-sweep {
+    inset: -8% 0;
   }
   .hero p {
     font-size: 1rem;
