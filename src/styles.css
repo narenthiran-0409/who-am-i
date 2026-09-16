@@ -175,7 +175,7 @@ button:hover {
 .dotted-title-bulb { opacity: 1; }
 @media (prefers-reduced-motion: no-preference) {
   .dotted-title-bulb {
-    animation: hero-dot-in 300ms linear var(--dot-delay) both;
+    animation: hero-dot-in var(--dot-fade, 120ms) linear var(--dot-delay) both;
   }
 }
 @keyframes hero-dot-in {
