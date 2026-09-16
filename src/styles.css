@@ -159,39 +159,28 @@ button:hover {
   letter-spacing: -0.02em;
 }
 .hero-hello {
-  position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  min-height: 1.25em;
 }
-.hero-word {
-  display: inline-block;
+.dotted-title {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  flex-shrink: 1;
 }
-.hero-letter {
-  --hero-scale-start: 1.5;
-  --hero-scale-mid: 1.06;
-  --hero-glow-blur: 18px;
-  display: inline-block;
-  opacity: 1;
-  transform: scale(1);
-  color: var(--text);
-  -webkit-text-stroke: 0 transparent;
-  text-shadow: none;
-  animation: hero-letter-in 650ms cubic-bezier(0.16, 0.84, 0.44, 1) both;
-  animation-delay: calc(var(--i) * 40ms);
+.dotted-title-blue { fill: #123fff; }
+.dotted-title-star { fill: #f4faff; }
+.dotted-title-bulb { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .dotted-title-bulb {
+    animation: hero-dot-in 300ms linear var(--dot-delay) both;
+  }
 }
-.hero-sweep {
-  position: absolute;
-  inset: -12% -4%;
-  background: linear-gradient(
-    100deg,
-    transparent 42%,
-    #eafdffcc 50%,
-    transparent 58%
-  );
-  mix-blend-mode: overlay;
-  opacity: 0;
-  pointer-events: none;
-  animation: hero-sweep-pass 700ms ease-out both;
-  animation-delay: 900ms;
+@keyframes hero-dot-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 .hero-name {
   display: block;
@@ -208,53 +197,8 @@ button:hover {
   transform: translateY(0);
   opacity: 1;
   animation: hero-name-in 820ms cubic-bezier(0.16, 0.84, 0.44, 1) both;
-  animation-delay: calc(1600ms + var(--i) * 70ms);
-}
-@keyframes hero-letter-in {
-  0% {
-    opacity: 0;
-    transform: scale(var(--hero-scale-start));
-    color: transparent;
-    -webkit-text-stroke: 1px var(--cyan);
-    text-shadow:
-      0 0 var(--hero-glow-blur) #00dbe799,
-      0 0 4px #00dbe7;
-  }
-  55% {
-    opacity: 1;
-    transform: scale(var(--hero-scale-mid));
-    color: transparent;
-    -webkit-text-stroke: 1px var(--cyan);
-    text-shadow: 0 0 calc(var(--hero-glow-blur) * 0.55) #00dbe766;
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    color: var(--text);
-    -webkit-text-stroke: 0 transparent;
-    text-shadow: none;
-  }
-}
-@keyframes hero-sweep-pass {
-  0% {
-    opacity: 0;
-    transform: translateX(-120%);
-  }
-  15% {
-    opacity: 1;
-  }
-  55% {
-    opacity: 1;
-    transform: translateX(70%);
-  }
-  75% {
-    opacity: 0;
-    transform: translateX(120%);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(0);
-  }
+  /* Share the final bulb finish time, preserving the existing name stagger. */
+  animation-delay: calc(var(--hero-title-duration, 0s) + var(--i) * 70ms);
 }
 @keyframes hero-name-in {
   0% {
@@ -1114,14 +1058,6 @@ textarea[aria-invalid="true"] {
     font-size: 2.5rem;
     line-height: 1.2;
     letter-spacing: -0.01em;
-  }
-  .hero-letter {
-    --hero-scale-start: 1.22;
-    --hero-scale-mid: 1.03;
-    --hero-glow-blur: 10px;
-  }
-  .hero-sweep {
-    inset: -8% 0;
   }
   .hero p {
     font-size: 1rem;
