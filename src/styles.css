@@ -161,21 +161,21 @@ button:hover {
 .hero-hello {
   display: flex;
   align-items: center;
-  min-height: 1.25em;
+  min-height: 1em;
 }
 .dotted-title {
   display: block;
-  width: 100%;
-  max-width: 100%;
+  width: 82%;
+  max-width: 32rem;
   height: auto;
   flex-shrink: 1;
 }
-.dotted-title-blue { fill: #123fff; }
-.dotted-title-star { fill: #f4faff; }
+.dotted-title-blue { fill: #496bff; }
+.dotted-title-star { fill: #d7e6ff; }
 .dotted-title-bulb { opacity: 1; }
 @media (prefers-reduced-motion: no-preference) {
   .dotted-title-bulb {
-    animation: hero-dot-in var(--dot-fade, 120ms) linear var(--dot-delay) both;
+    animation: hero-dot-in var(--dot-fade, 50ms) linear var(--dot-delay) both;
   }
 }
 @keyframes hero-dot-in {

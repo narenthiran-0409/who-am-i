@@ -1,8 +1,8 @@
 import glyphs from "./dotGlyphs.json";
 
-const DOT_INTERVAL = 0.04;
-const DOT_FADE = 0.12;
-const STROKE_PAUSE = 0.06;
+const DOT_INTERVAL = 0.014;
+const DOT_FADE = 0.05;
+const STROKE_PAUSE = 0.02;
 
 // Geometry is separate from portfolio copy. Unsupported text stays readable.
 export function makeTitle(text) {
@@ -47,8 +47,8 @@ export default function DottedTitle({ title }) {
         <g key={`${dot.x}-${dot.y}`} className="dotted-title-bulb"
           style={{ "--dot-delay": `${dot.delay}s` }}
           transform={`translate(${dot.x} ${dot.y})`}>
-          <circle className="dotted-title-blue" r="3.9" />
-          <path className="dotted-title-star" d="M0-2.5 .65-.65 2.5 0 .65.65 0 2.5-.65.65-2.5 0-.65-.65Z" />
+          <circle className="dotted-title-blue" r="3" />
+          <path className="dotted-title-star" d="M0-1.8 .5-.5 1.8 0 .5.5 0 1.8-.5.5-1.8 0-.5-.5Z" />
         </g>
       ))}
     </svg>
