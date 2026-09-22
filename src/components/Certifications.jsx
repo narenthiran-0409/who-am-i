@@ -38,6 +38,16 @@ export default function Certifications({ items, heading, labels }) {
               )}
             </div>
             <div className="certificate-content">
+              {item.badge && (
+                <img
+                  className="certificate-badge"
+                  src={item.badge.src}
+                  alt={item.badge.alt}
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                />
+              )}
               <div className="tags">
                 {item.tags.map((tag) => (
                   <span key={tag}>{tag}</span>

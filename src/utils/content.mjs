@@ -13,11 +13,14 @@ export function buildResume(profile, skills, journey) {
     skills.map((s) => `${s.name} (${s.category})`).join(", "),
     "",
     h.experience,
-    ...journey.experience.flatMap((e) => [
-      `${e.title} | ${e.organization} | ${e.period}`,
-      ...(e.highlights || []),
-      "",
-    ]),
+    ...journey.experience.flatMap((e) =>
+      [e, ...(e.history || [])].flatMap(role => [
+        [role.title, e.organization, role.period].filter(Boolean).join(" | "),
+        ...(role.description ? [role.description] : []),
+        ...(role.highlights || []),
+        "",
+      ]),
+    ),
     h.education,
     ...journey.education.flatMap((e) => [
       `${e.title} | ${e.organization} | ${e.period}`,
@@ -42,4 +45,11 @@ export function buildContactDraft(values, config) {
     body,
     href: `mailto:${config.recipient}?subject=${encodeURIComponent(config.subject)}&body=${encodeURIComponent(body)}`,
   };
+}
+export function buildNavigation(navigation, projects, projectsLabel) {
+  const items = [...navigation.items];
+  if (projects.enabled && projects.items.length && !items.some(item => item.target === "projects")) {
+    items.splice(3, 0, { label: projectsLabel, target: "projects" });
+  }
+  return { ...navigation, items };
 }

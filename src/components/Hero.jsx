@@ -1,3 +1,4 @@
+import AvatarVideo from "./AvatarVideo";
 import Icon from "./Icon";
 import SmartLink from "./SmartLink";
 import HeroHeading from "./HeroHeading";
@@ -39,8 +40,8 @@ export default function Hero({ profile }) {
           </div>
         </div>
       </div>
-      <div className="hero-visual" aria-hidden={!profile.heroImage}>
-        {profile.heroImage && (
+      <div className="hero-visual" aria-hidden={!profile.heroVideo && !profile.heroImage}>
+        {profile.heroVideo ? <AvatarVideo key={profile.heroVideo.src} {...profile.heroVideo} /> : profile.heroImage && (
           <img src={profile.heroImage.src} alt={profile.heroImage.alt} />
         )}
       </div>

@@ -1,29 +1,98 @@
 [
   {
-    "id": "aws-solutions-architect",
-    "title": "AWS Certified Solutions Architect",
-    "description": "Professional-level certification for designing distributed systems on AWS.",
-    "tags": ["Cloud", "Infrastructure"],
-    "icon": "cloud",
-    "image": null,
-    "credentialUrl": null
-  },
-  {
-    "id": "google-cloud-developer",
-    "title": "Google Professional Cloud Developer",
-    "description": "Certified expertise in building scalable applications on Google Cloud.",
-    "tags": ["GCP", "Development"],
-    "icon": "chip",
-    "image": null,
-    "credentialUrl": null
-  },
-  {
-    "id": "azure-solutions-architect",
-    "title": "Azure Solutions Architect Expert",
-    "description": "Advanced skills in designing hybrid solutions that run on Microsoft Azure.",
-    "tags": ["Azure", "Enterprise"],
+    "id": "databricks-certified-data-engineer-associate",
+    "title": "Databricks Certified Data Engineer Associate",
+"description": "Certification validating foundational data engineering skills in Databricks, including data ingestion, ETL with PySpark, Lakeflow Jobs, optimization, governance, and security.",
+    "tags": ["Databricks", "Lakehouse", "Delta Live Tables","Data Pipelines","ETL","SQL","PySpark","Python","CI/CD"],
     "icon": "badge",
-    "image": null,
-    "credentialUrl": null
+    "badge": {
+      "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/163564993",
+      "alt": "Databricks Certified Data Engineer Associate badge"
+    },
+    "image": {
+      "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/163564993",
+      "alt": "Databricks Certified Data Engineer Associate certificate"
+    },
+    "credentialUrl": "https://www.credential.net/2a22b8b2-10bc-480d-9663-8751b841aae4#acc.BqYI8QZV"
+  },
+  {
+    "id": "microstrategy-project-architect",
+    "title": "MicroStrategy Project Architect",
+    "description": "Certification focused on designing and organizing scalable MicroStrategy projects and analytics solutions.",
+    "tags": ["MicroStrategy", "Architecture"],
+    "icon": "layers",
+    "badge": {
+        "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/158003838",
+        "alt": "MicroStrategy Project Architect badge"
+      },
+      "image": {
+        "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/158003838",
+        "alt": "MicroStrategy Project Architect certificate"
+      },
+    "credentialUrl": "https://www.credential.net/093cf5d8-ee19-42fd-9f4c-225aa78dba21"
+  },
+  {
+    "id": "microstrategy-administrator",
+    "title": "MicroStrategy Administrator",
+    "description": "Certification covering administration, configuration, security, and maintenance of MicroStrategy environments.",
+    "tags": ["MicroStrategy", "Administration"],
+    "icon": "badge",
+    "badge": {
+        "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/159829869",
+        "alt": "MicroStrategy Administrator badge"
+      },
+      "image": {
+        "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/159829869",
+        "alt": "MicroStrategy Administrator certificate"
+      },
+    "credentialUrl": "https://www.credential.net/da06b6f5-5df5-4df6-817e-18aaaf528c17"
+  },
+  {
+    "id": "strategy-one-certified-professional",
+    "title": "Strategy ONE Certified Professional",
+    "description": "Professional certification in Strategy ONE.",
+    "tags": ["Strategy ONE"],
+    "icon": "badge",
+    "badge": {
+        "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/161593188",
+        "alt": "Strategy ONE Certified Professional badge"
+      },
+      "image": {
+        "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/161593188",
+        "alt": "Strategy ONE Certified Professional certificate"
+      },
+    "credentialUrl": "https://www.credential.net/8dc2549b-d1fb-4202-9309-ad36afe29e0c"
+  },
+  {
+    "id": "enterprise-analyst",
+    "title": "Enterprise Analyst",
+    "description": "Enterprise Analyst certification.",
+    "tags": ["Enterprise Analyst"],
+    "icon": "badge",
+    "badge": {
+        "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/161593187",
+        "alt": "Enterprise Analyst badge"
+      },
+      "image": {
+        "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/161593187",
+        "alt": "Enterprise Analyst certificate"
+      },
+    "credentialUrl": "https://www.credential.net/4a27e578-b9f1-4975-b65a-6c9b82f48a6a"
+  },
+  {
+    "id": "departmental-analyst",
+    "title": "Departmental Analyst",
+    "description": "Departmental Analyst certification.",
+    "tags": ["Departmental Analyst"],
+    "icon": "badge",
+    "badge": {
+        "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/158698479",
+        "alt": "Departmental Analyst badge"
+      },
+      "image": {
+        "src": "https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/158698479",
+        "alt": "Departmental Analyst certificate"
+      },
+    "credentialUrl": "https://www.credential.net/0c96c718-4b6d-40c1-b5af-8ff8db636e68"
   }
 ]

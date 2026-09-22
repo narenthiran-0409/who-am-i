@@ -55,13 +55,14 @@ test("contact draft encodes user-controlled query delimiters and Unicode safely"
   assert.ok(result.body.includes(values.message));
 });
 test("resume uses changed JSON content and marks the supplied sample", () => {
+  const sampleNotice = "SAMPLE RESUME — Replace before sharing.";
   const resume = buildResume(
-    { ...profile, name: "Updated Person" },
+    { ...profile, name: "Updated Person", resume: { ...profile.resume, sampleNotice } },
     skills,
     journey,
   );
   assert.ok(resume.includes("Updated Person"));
-  assert.ok(resume.includes(profile.resume.sampleNotice));
+  assert.ok(resume.includes(sampleNotice));
   for (const item of skills) assert.ok(resume.includes(item.name));
   for (const item of journey.education) assert.ok(resume.includes(item.title));
 });
@@ -69,4 +70,15 @@ test("optional empty career arrays produce a usable resume", () => {
   assert.doesNotThrow(() =>
     buildResume(profile, [], { experience: [], education: [] }),
   );
+});
+test("resume includes organization role history without inventing missing dates", () => {
+  const resume = buildResume(profile, [], {
+    education: [],
+    experience: [{
+      title: "Developer", organization: "Example Org", period: "2024–present",
+      history: [{ id: "trainee", title: "Technical Trainee", period: null, description: "Learned .NET skills." }],
+    }],
+  });
+  assert.ok(resume.includes("Developer | Example Org | 2024–present"));
+  assert.ok(resume.includes("Technical Trainee | Example Org\nLearned .NET skills."));
 });

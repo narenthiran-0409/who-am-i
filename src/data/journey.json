@@ -1,37 +1,83 @@
 {
   "educationLabel": "ACADEMIC_QUALIFICATIONS",
   "experienceLabel": "PROFESSIONAL_EXPERIENCE",
+  "timelineLabels": {
+    "currentEducation": "In progress",
+    "pastEducation": "Completed",
+    "currentExperience": "Current role",
+    "pastExperience": "Previous role",
+    "expand": "View timeline",
+    "collapse": "Hide timeline"
+  },
   "education": [
     {
-      "id": "masters",
-      "title": "Master’s in IT",
-      "organization": "University of Life Sciences",
-      "period": "2022 — Present",
-      "description": "Specializing in advanced information systems and software architecture.",
-      "logo": null,
+      "id": "mca",
+      "title": "Master of Computer Applications (M.C.A)",
+      "organization": "Bharathiar University, Coimbatore",
+      "period": "2025 - present",
+      "description": "Enhanced technical skills and gained deeper insights into software development and enterprise solutions.",
+      "logo": {
+        "src": "/assets/education/bharathiyar.png",
+        "alt": "Bharathiar University logo"
+      },
       "icon": "school"
-    },
-    {
-      "id": "bachelors",
-      "title": "Bachelor’s in CS",
-      "organization": "Technical Institute",
-      "period": "2018 — 2022",
-      "description": "Foundational studies in computer science, algorithms, and data structures.",
-      "logo": null,
+    },{
+      "id": "bsc-ct",
+      "title": "B.Sc in Computer Technology",
+      "organization": "Rathinam College of Arts and Science, Coimbatore",
+      "period": "2019 - 2022",
+      "description": "Built a strong foundation in computer science and programming before moving into software development.",
+      "logo": {
+        "src": "/assets/education/rathinam.png",
+        "alt": "Rathinam College of Arts and Science logo"
+      },
+      "icon": "school"
+    },{
+      "id": "sslc-hsc",
+      "title": "SSLC & HSC",
+      "organization": "R.K.Sree Rangammal Kalvi Nilayam, Coimbatore",
+      "period": "2016 - 2019",
+      "description": "Completed my secondary and higher secondary education with a focus on science and mathematics.",
+      "logo": {
+        "src": "/assets/education/RKS-institutions-logo-02.png",
+        "alt": "R.K.Sree Rangammal Kalvi Nilayam logo"
+      },
       "icon": "school"
     }
   ],
-  "experience": [
-    {
-      "id": "tech-solutions",
-      "title": "Senior Software Developer",
-      "organization": "Tech Solutions",
-      "period": "Jan 2024 – Present",
-      "highlights": [
-        "Developed scalable enterprise applications using modern cloud architectures."
-      ],
-      "logo": null,
-      "icon": "briefcase"
-    }
-  ]
+"experience": [
+  {
+    "id": "sierra-digital",
+    "history": [
+      {
+        "id": "sierra-software-developer",
+        "title": "Software Developer",
+        "description": "Developed and maintained enterprise applications using C#, VB.NET, ASP.NET MVC, WPF, Web APIs, and SQL Server, including API integrations, database configuration, data migration, and operational reporting.",
+        "period": null
+      },
+      {
+        "id": "sierra-technical-trainee",
+        "title": "Technical Trainee",
+        "description": "Built a strong foundation in .NET development, C#, VB.NET, ASP.NET MVC, WPF, SQL Server, debugging, and enterprise application development practices.",
+        "period": null
+      }
+    ],
+    "title": "Senior Software Developer",
+    "organization": "Sierra Digital, Coimbatore",
+    "period": "2022 - Present",
+    "highlights": [
+      "Build and maintain enterprise business applications using .NET, React, SQL Server, and modern web technologies.",
+      "Develop and integrate secure Web APIs, backend services, data workflows, dashboards, and cloud-connected solutions.",
+      "Configure databases and perform schema mapping for enterprise master data, with API-level validation and unit testing.",
+      "Implement client data migrations through SaaS Web APIs while maintaining data integrity and client-specific requirements.",
+      "Develop operational reports and data-driven solutions to support business and technical requirements.",
+      "Collaborate with QA and development teams, participate in code reviews, troubleshoot application issues, and manage source code using Git."
+    ],
+    "logo": {
+      "src": "/assets/experience/sierralogo.png",
+      "alt": "Sierra Digital logo"
+    },
+    "icon": "briefcase"
+  }
+]
 }

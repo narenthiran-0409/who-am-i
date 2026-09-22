@@ -2,39 +2,33 @@
   "name": "Heisgn Berg",
   "greeting": "Hello World",
   "intro": "I’m Heisgn Berg",
-  "role": "Senior Software Architect",
+  "role": "Software Developer",
   "summary": [
     {
-      "text": "Senior Software Architect specializing in "
+      "text": "Software Developer with 3.5+ years of experience building "
     },
     {
-      "text": "technical precision",
+      "text": "reliable enterprise applications",
       "emphasis": true
     },
     {
-      "text": " and modern digital experiences. I transform complex problems into sleek, efficient, scalable code architectures."
+      "text": " using .NET, React, SQL Server, and cloud technologies. I turn complex business requirements into secure, scalable, user-friendly solutions."
     }
   ],
   "heroImage": null,
   "portrait": {
     "src": "/assets/profile.png",
-    "alt": "Portrait from the supplied portfolio design"
+    "alt": "Portrait of Heisgn Berg"
   },
-  "aboutRole": "UI/UX Designer & Web Developer",
+  "aboutRole": "Software Developer",
   "biography": [
-    "I'm currently doing my Master's degree in Information technology @ Latvian University of Life science and technology. I've started coding at the age of 16. My passions lie in Web designing and Web development, as well as some extra kinds of stuff, and I look forward to combining these to succeed in my future career."
+    "I'm a Software Developer with 3.5+ years of experience at Sierra Digital, building enterprise web applications and data-driven platforms. I work across backend development with ASP.NET Core, .NET 8 Web API, Entity Framework Core, Dapper, and SQL Server, and frontend development with React and JavaScript. I enjoy transforming complex workflows into secure, scalable, and intuitive products."
   ],
   "facts": [
     {
       "label": "BIRTHDAY",
       "value": "04 Sept 2004",
       "icon": "calendar",
-      "href": null
-    },
-    {
-      "label": "AGE",
-      "value": "22",
-      "icon": "cake",
       "href": null
     },
     {
@@ -50,14 +44,14 @@
       "href": "mailto:narenthiran.dll@gmail.com"
     },
     {
-      "label": "CITY",
-      "value": "Lisbon, Portugal",
-      "icon": "pin",
+      "label": "EXPERIENCE",
+      "value": "3.5+ Years",
+      "icon": "briefcase",
       "href": null
     },
     {
       "label": "DEGREE",
-      "value": "M.sc., Computer Systems",
+      "value": "MCA",
       "icon": "school",
       "href": null
     }
@@ -82,7 +76,7 @@
   "resume": {
     "url": null,
     "filename": "heisgn-berg-resume.txt",
-    "sampleNotice": "SAMPLE RESUME — Content reproduced from the supplied design. Replace with your own information before sharing.",
+    "sampleNotice": null,
     "headings": {
       "about": "ABOUT",
       "skills": "SKILLS",
@@ -91,5 +85,13 @@
       "contact": "CONTACT"
     },
     "generatedUrl": "/assets/resume.txt"
+  },
+  "heroVideo": {
+    "src": "/assets/developer-salute.mp4",
+    "fallbackImage": "/assets/developer-avatar.png",
+    "accessibleLabel": "Play or replay the developer's salute",
+    "alt": "Seated developer with glasses and a laptop",
+    "width": 960,
+    "height": 960
   }
 }

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { buildNavigation } from "./utils/content.mjs";
 import {
   site,
   profile,
@@ -18,12 +19,7 @@ import Journey from "./components/Journey";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 export default function App() {
-  const navigation = { ...site.navigation, items: [...site.navigation.items] };
-  if (projects.enabled && projects.items.length)
-    navigation.items.splice(3, 0, {
-      label: site.labels.projectsNavigation,
-      target: "projects",
-    });
+  const navigation = buildNavigation(site.navigation, projects, site.labels.projectsNavigation);
   useEffect(() => {
     const hash = window.location.hash.slice(1);
     if (!hash) return;
@@ -52,7 +48,7 @@ export default function App() {
           heading={site.sections.projects}
           labels={site.labels}
         />
-        <Skills items={skills} heading={site.sections.skills} />
+        <Skills items={skills} heading={site.sections.skills} labels={site.labels} />
         <Journey data={journey} heading={site.sections.journey} />
         <Contact data={contact} />
       </main>

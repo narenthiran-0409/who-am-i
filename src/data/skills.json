@@ -1,26 +1,182 @@
 [
   {
-    "id": "react",
-    "name": "React",
-    "category": "Frontend",
-    "icon": "cube"
-  },
-  {
-    "id": "typescript",
-    "name": "TypeScript",
-    "category": "Language",
-    "icon": "code"
-  },
-  {
-    "id": "node",
-    "name": "Node.js",
-    "category": "Backend",
+    "id": "csharp",
+    "name": "C#",
+    "category": "Backend / .NET",
     "icon": "terminal"
   },
   {
-    "id": "next",
-    "name": "Next.js",
-    "category": "Framework",
+    "id": "vbnet",
+    "name": "VB.NET",
+    "category": "Backend / .NET",
+    "icon": "terminal"
+  },
+  {
+    "id": "dotnet",
+    "name": ".NET",
+    "category": "Backend / .NET",
+    "icon": "terminal"
+  },
+  {
+    "id": "aspnet-core-api",
+    "name": "ASP.NET Core Web API",
+    "category": "Backend / .NET",
+    "icon": "terminal"
+  },
+  {
+    "id": "aspnet-core-mvc",
+    "name": "ASP.NET Core MVC",
+    "category": "Backend / .NET",
+    "icon": "terminal"
+  },
+  {
+    "id": "entity-framework-core",
+    "name": "Entity Framework Core",
+    "category": "Backend / .NET",
+    "icon": "terminal"
+  },
+  {
+    "id": "ado-net",
+    "name": "ADO.NET",
+    "category": "Backend / .NET",
+    "icon": "terminal"
+  },
+  {
+    "id": "dapper",
+    "name": "Dapper",
+    "category": "Backend / .NET",
+    "icon": "terminal"
+  },
+  {
+    "id": "rest-api",
+    "name": "REST API",
+    "category": "Backend / API",
+    "icon": "terminal"
+  },
+  {
+    "id": "grpc",
+    "name": "gRPC",
+    "category": "Backend / API",
+    "icon": "terminal"
+  },
+  {
+    "id": "microservices",
+    "name": "Microservices",
+    "category": "Backend / Architecture",
     "icon": "layers"
+  },
+  {
+    "id": "wpf",
+    "name": "WPF",
+    "category": "Desktop / .NET",
+    "icon": "monitor"
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "category": "Frontend",
+    "icon": "code"
+  },
+  {
+    "id": "react",
+    "name": "React",
+    "category": "Frontend",
+    "icon": "code"
+  },
+  {
+    "id": "jquery",
+    "name": "jQuery",
+    "category": "Frontend",
+    "icon": "code"
+  },
+  {
+    "id": "ajax",
+    "name": "AJAX",
+    "category": "Frontend",
+    "icon": "code"
+  },
+  {
+    "id": "bootstrap",
+    "name": "Bootstrap",
+    "category": "Frontend",
+    "icon": "code"
+  },
+  {
+    "id": "tailwind-css",
+    "name": "Tailwind CSS",
+    "category": "Frontend",
+    "icon": "code"
+  },
+  {
+    "id": "nodejs",
+    "name": "Node.js",
+    "category": "Tools & Runtime",
+    "icon": "server"
+  },
+  {
+    "id": "sql-server",
+    "name": "Microsoft SQL Server",
+    "category": "Database",
+    "icon": "database"
+  },
+  {
+    "id": "postgresql",
+    "name": "PostgreSQL",
+    "category": "Database",
+    "icon": "database"
+  },
+  {
+    "id": "aws",
+    "name": "AWS",
+    "category": "Cloud & DevOps",
+    "icon": "cloud"
+  },
+  {
+    "id": "iis",
+    "name": "IIS",
+    "category": "Cloud & DevOps",
+    "icon": "server"
+  },
+  {
+    "id": "azure-devops",
+    "name": "Azure DevOps",
+    "category": "Cloud & DevOps",
+    "icon": "cloud"
+  },
+  {
+    "id": "git",
+    "name": "Git",
+    "category": "Version Control",
+    "icon": "git-branch"
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "category": "Version Control",
+    "icon": "git-branch"
+  },
+  {
+    "id": "visual-studio",
+    "name": "Visual Studio",
+    "category": "Development Tools",
+    "icon": "code"
+  },
+  {
+    "id": "vs-code",
+    "name": "Visual Studio Code",
+    "category": "Development Tools",
+    "icon": "code"
+  },
+  {
+    "id": "postman",
+    "name": "Postman",
+    "category": "Development Tools",
+    "icon": "tool"
+  },
+  {
+    "id": "ssms",
+    "name": "SQL Server Management Studio",
+    "category": "Development Tools",
+    "icon": "database"
   }
 ]

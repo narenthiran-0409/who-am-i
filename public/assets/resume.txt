@@ -1,24 +1,34 @@
-SAMPLE RESUME — Content reproduced from the supplied design. Replace with your own information before sharing.
+
 
 Heisgn Berg
-Senior Software Architect
+Software Developer
 
 ABOUT
-I'm currently doing my Master's degree in Information technology @ Latvian University of Life science and technology. I've started coding at the age of 16. My passions lie in Web designing and Web development, as well as some extra kinds of stuff, and I look forward to combining these to succeed in my future career.
+I'm a Software Developer with 3.5+ years of experience at Sierra Digital, building enterprise web applications and data-driven platforms. I work across backend development with ASP.NET Core, .NET 8 Web API, Entity Framework Core, Dapper, and SQL Server, and frontend development with React and JavaScript. I enjoy transforming complex workflows into secure, scalable, and intuitive products.
 
 SKILLS
-React (Frontend), TypeScript (Language), Node.js (Backend), Next.js (Framework)
+C# (Backend / .NET), VB.NET (Backend / .NET), ASP.NET MVC (Backend / .NET), WPF (Backend / .NET), Entity Framework (Backend / .NET), JavaScript (Frontend), jQuery (Frontend), AJAX (Frontend), React JS (Frontend), MS SQL Server (Database), PostgreSQL (Database), AWS (Cloud & DevOps), Azure Cloud (Cloud & DevOps), Git (Cloud & DevOps), Version Control (Cloud & DevOps)
 
 EXPERIENCE
-Senior Software Developer | Tech Solutions | Jan 2024 – Present
-Developed scalable enterprise applications using modern cloud architectures.
+Senior Software Developer | Sierra Digital, Coimbatore | 2022 - present
+Build and maintain enterprise applications using .NET, React, SQL Server, and modern web technologies.
+Develop secure APIs, data workflows, dashboards, and cloud-connected solutions for real business requirements.
+
+Software Developer | Sierra Digital, Coimbatore
+Learned .NET skills.
+
+Technical Trainee | Sierra Digital, Coimbatore
+Learned .NET skills.
 
 EDUCATION
-Master’s in IT | University of Life Sciences | 2022 — Present
-Specializing in advanced information systems and software architecture.
+Master of Computer Applications (M.C.A) | Bharathiar University, Coimbatore | 2025 - present
+Enhanced technical skills and gained deeper insights into software development and enterprise solutions.
 
-Bachelor’s in CS | Technical Institute | 2018 — 2022
-Foundational studies in computer science, algorithms, and data structures.
+B.Sc in Computer Technology | Rathinam College of Arts and Science, Coimbatore | 2019 - 2022
+Built a strong foundation in computer science and programming before moving into software development.
+
+SSLC & HSC | R.K.Sree Rangammal Kalvi Nilayam, Coimbatore | 2016 - 2019
+Completed my secondary and higher secondary education with a focus on science and mathematics.
 
 CONTACT
 PHONE: +91-9342206740

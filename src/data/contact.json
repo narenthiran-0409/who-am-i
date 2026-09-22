@@ -2,7 +2,7 @@
   "eyebrow": "READY_FOR_COLLABORATION",
   "title": "Contact",
   "recipient": "narenthiran.dll@gmail.com",
-  "subject": "Portfolio inquiry",
+  "subject": "Project inquiry for Heisgn Berg",
   "submit": "EXECUTE_SEND",
   "helper": "Opens your email app with a draft for you to review and send.",
   "prepared": "Your email draft is ready. If your email app did not open, copy the message below.",
@@ -30,7 +30,7 @@
     {
       "name": "message",
       "label": "MESSAGE_INPUT",
-      "placeholder": "Briefly describe your requirements...",
+      "placeholder": "Tell me about your project or opportunity...",
       "type": "textarea",
       "maxLength": 5000
     }

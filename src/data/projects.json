@@ -1,4 +1,32 @@
 {
   "enabled": false,
-  "items": []
+  "items": [
+    {
+      "id": "datacraft",
+      "title": "DataCraft",
+      "description": "An AI-assisted data quality and governance platform for discovering, profiling, validating, correcting, approving, staging, publishing, and monitoring enterprise data.",
+      "tags": ["React", ".NET", "PostgreSQL", "AI", "Data Quality"],
+      "image": null,
+      "projectUrl": "https://github.com/narenthiran-0409/datacraft",
+      "sourceUrl": "https://github.com/narenthiran-0409/datacraft"
+    },
+    {
+      "id": "quickbills-erp",
+      "title": "QuickBills ERP",
+      "description": "A modular enterprise application covering master data, inventory, CRM, leave management, accounts, payments, stock tracking, and operational reporting.",
+      "tags": ["React", ".NET 8", "SQL Server", "ERP"],
+      "image": null,
+      "projectUrl": null,
+      "sourceUrl": null
+    },
+    {
+      "id": "arctus-data-management",
+      "title": "Arctus Data Migration & Management",
+      "description": "A web platform deployed on Ubuntu with a modern frontend, API services, PostgreSQL, Nginx, PM2, and automated AWS delivery workflows.",
+      "tags": ["React", "PostgreSQL", "AWS", "Ubuntu", "Nginx"],
+      "image": null,
+      "projectUrl": null,
+      "sourceUrl": null
+    }
+  ]
 }

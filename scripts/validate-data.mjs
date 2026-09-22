@@ -39,6 +39,31 @@ for (const [name, records] of Object.entries({
   }
 }
 required(data.profile.name, "profile.name");
+for (const key of ["expand", "collapse", "currentEducation", "pastEducation", "currentExperience", "pastExperience"])
+  required(data.journey.timelineLabels?.[key], "journey.timelineLabels." + key);
+for (const item of data.journey.experience) {
+  if (item.history == null) continue;
+  if (!Array.isArray(item.history)) fail("journey." + item.id + ".history must be an array");
+  const roleIds = new Set([item.id]);
+  for (const role of item.history) {
+    required(role.id, "journey." + item.id + ".history.id");
+    required(role.title, "journey." + item.id + ".history.title");
+    if (roleIds.has(role.id)) fail("duplicate role id: " + role.id);
+    roleIds.add(role.id);
+    if (role.period != null) required(role.period, "journey." + item.id + ".history.period");
+    if (role.highlights != null) {
+      if (!Array.isArray(role.highlights)) fail("role highlights must be an array");
+      for (const text of role.highlights) required(text, "role highlight");
+    }
+  }
+}
+for (const item of [...data.journey.education, ...data.journey.experience]) {
+  if (item.logo == null) continue;
+  if (typeof item.logo !== "object" || Array.isArray(item.logo))
+    fail("journey." + item.id + ".logo must be an object with src and alt, or null");
+  required(item.logo.src, "journey." + item.id + ".logo.src");
+  required(item.logo.alt, "journey." + item.id + ".logo.alt");
+}
 required(data.profile.intro, "profile.intro");
 required(data.site.meta.title, "site.meta.title");
 if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.contact.recipient))
@@ -52,9 +77,23 @@ const sections = new Set([
   "contact",
   ...(data.projects.enabled && data.projects.items.length ? ["projects"] : []),
 ]);
-for (const item of data.site.navigation.items)
+const navigationTargets = new Set();
+for (const item of data.site.navigation.items) {
+  if (navigationTargets.has(item.target))
+    fail("duplicate navigation target: " + item.target);
+  navigationTargets.add(item.target);
   if (!sections.has(item.target))
     fail("navigation target not found: " + item.target);
+}
+for (const item of data.projects.items) {
+  for (const key of ["technologies", "tags"]) {
+    if (item[key] == null) continue;
+    if (!Array.isArray(item[key])) fail("projects." + item.id + "." + key + " must be an array");
+    for (const tag of item[key]) required(tag, "projects." + item.id + "." + key);
+    if (new Set(item[key]).size !== item[key].length)
+      fail("projects." + item.id + "." + key + " contains duplicate tags");
+  }
+}
 const knownIcons = new Set(Object.keys(paths));
 function inspect(value, path = "data") {
   if (Array.isArray(value)) {
@@ -72,7 +111,10 @@ function inspect(value, path = "data") {
         "url",
         "credentialUrl",
         "sourceUrl",
+        "projectUrl",
         "generatedUrl",
+        "modelUrl",
+        "fallbackImage",
       ].includes(key) &&
       item
     ) {
@@ -93,6 +135,13 @@ function inspect(value, path = "data") {
   }
 }
 inspect(data);
+if (data.profile.heroVideo) {
+  for (const key of ["src", "fallbackImage", "accessibleLabel", "alt"])
+    required(data.profile.heroVideo[key], "profile.heroVideo." + key);
+  for (const key of ["width", "height"])
+    if (!Number.isInteger(data.profile.heroVideo[key]) || data.profile.heroVideo[key] <= 0)
+      fail("profile.heroVideo." + key + " must be a positive integer");
+}
 for (const f of data.contact.fields) {
   required(f.label, "contact.fields.label");
   if (!["name", "email", "message"].includes(f.name))

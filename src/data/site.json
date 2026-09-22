@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Heisgn Berg | Developer Portfolio",
-    "description": "Software architecture, web development, and modern digital experiences. Explore my skills, certifications, and career journey.",
+    "title": "Heisgn Berg | Software Developer Portfolio",
+    "description": "Portfolio of Heisgn Berg, a Software Developer specializing in .NET, React, SQL Server, enterprise applications, and cloud technologies.",
     "language": "en"
   },
   "navigation": {
@@ -31,6 +31,10 @@
         "target": "experience-education"
       },
       {
+        "label": "Projects",
+        "target": "projects"
+      },
+      {
         "label": "Contact",
         "target": "contact"
       }
@@ -39,7 +43,7 @@
   "sections": {
     "about": {
       "eyebrow": "About",
-      "title": "Welcome! I’m White"
+      "title": "Who Am I"
     },
     "certifications": {
       "eyebrow": "Certifications",
@@ -66,7 +70,7 @@
     "previous": "Previous",
     "next": "Next",
     "close": "Close details",
-    "certificateNotice": "This entry is sample content from the supplied design. A verified certificate has not been provided.",
+    "certificateNotice": "Credential link is not available for this certification.",
     "projectSource": "SOURCE_CODE",
     "projectsNavigation": "Projects"
   },
