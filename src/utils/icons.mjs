@@ -1,4 +1,6 @@
 export const paths = {
+  "contact-user": "M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0 M4 21v-2a8 8 0 0 1 16 0v2",
+  "contact-message": "M4 3h16v13H9l-5 5z M8 8h8 M8 12h5",
   monitor: "M3 4h18v13H3z M8 21h8 M12 17v4",
   server: "M3 3h18v7H3z M3 14h18v7H3z M7 6.5h.01 M7 17.5h.01",
   database: "M20 5c0 2-4 3-8 3S4 7 4 5s4-3 8-3 8 1 8 3z M4 5v14c0 2 4 3 8 3s8-1 8-3V5 M4 12c0 2 4 3 8 3s8-1 8-3",

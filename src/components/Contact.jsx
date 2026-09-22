@@ -73,9 +73,16 @@ export default function Contact({ data }) {
   return (
     <section id="contact" tabIndex={-1} className="contact container" aria-labelledby="contact-title">
       <div className="contact-inner">
+        <div className="contact-lead">
         <span className="eyebrow">{data.eyebrow}</span>
-        <h2 id="contact-title">{data.title}</h2>
+        <h2 id="contact-title" aria-label={data.title}>{data.headingLead}<span>{data.headingAccent}</span></h2>
         <p className="contact-intro">{data.description}</p>
+        </div>
+        <div className="contact-card">
+        <header className="contact-card-header">
+          <span className="contact-card-icon"><Icon name={data.cardIcon} size={30} /></span>
+          <div><span className="eyebrow">{data.cardEyebrow}</span><h3>{data.cardTitle}</h3><p>{data.cardDescription}</p></div>
+        </header>
         <form onSubmit={submit} noValidate aria-busy={locked}>
           <div className="contact-fields">
             {data.fields.map(field => {
@@ -92,7 +99,7 @@ export default function Contact({ data }) {
               };
               return (
                 <div className={`field ${field.wide ? "field-wide" : ""}`} key={field.name}>
-                  <label htmlFor={common.id}>{field.label}<span className="contact-required" aria-hidden="true"> *</span></label>
+                  <label htmlFor={common.id}><Icon name={field.icon} size={16} />{field.label}<span className="contact-required" aria-hidden="true"> *</span></label>
                   {field.type === "textarea" ? <textarea {...common} rows={5} /> : <input {...common} type={field.type} autoComplete={field.autocomplete} />}
                   {field.name === "message" && <p className="contact-count" id="contact-message-count">{messageLength} / {field.maxLength} {data.characters}</p>}
                   {errors[field.name] && <p className="field-error" id={`error-${field.name}`}>{errors[field.name]}</p>}
@@ -105,7 +112,7 @@ export default function Contact({ data }) {
             <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" maxLength={200} />
           </div>
           <button type="submit" className="button button-primary" disabled={locked}>
-            {locked ? data.sending : data.submit}<Icon name="send" size={20} />
+            <Icon name="send" size={20} />{locked ? data.sending : data.submit}<Icon name="right" size={18} className="contact-send-arrow" />
           </button>
           <p className="form-helper">{data.helper}</p>
           <div className={`contact-status contact-status--${state}`} role="status" aria-live="polite" aria-atomic="true">
@@ -113,6 +120,7 @@ export default function Contact({ data }) {
             {feedback && <p>{feedback}</p>}
           </div>
         </form>
+        </div>
       </div>
     </section>
   );

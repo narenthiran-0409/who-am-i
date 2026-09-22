@@ -22,6 +22,10 @@ Base: main `5620f781dd839146be327cc21fb30d6df8b84f55`. Reviewed 2026-09-22.
 
 ## Remaining live verification
 
+### Reference card refresh
+
+Contact now uses a plain text introduction beside a rounded form card, with a cyan gradient border, glowing mail icon, field icons, rounded inputs, and full-width send action. No decorative background image or unverified availability/response-time claims were added. All copy and icon choices are JSON-driven. The existing API flow is unchanged. The 23 frontend tests and production build pass after the refresh; desktop and 390/320px layouts were visually reviewed, including a narrow-screen heading wrapping correction. `contact-review.jpg` shows the refreshed desktop card.
+
 Deployment and real inbox delivery are **not verified**. Configure backend SMTP credentials, authorized From address, recipient, public HTTPS API route, trusted proxy, and allowed frontend origin as described in CONTACT.md. Then submit through the deployed frontend, verify Inbox/Spam receipt and Reply-To, and exercise rejected delivery. Do not treat SMTP acceptance alone as proof of inbox arrival.
 
 Rate limiting and 15-minute deduplication are in-memory and intended for one API instance. Restarts/expiry or multiple replicas require shared storage for stronger guarantees. The form reuses request IDs while the page remains open; refreshing starts a new interaction.
