@@ -1,43 +1,33 @@
 {
   "eyebrow": "READY_FOR_COLLABORATION",
   "title": "Contact",
-  "recipient": "narenthiran.dll@gmail.com",
-  "subject": "Project inquiry for Heisgn Berg",
+  "description": "Have a project in mind or an opportunity to share? Let's connect.",
   "submit": "EXECUTE_SEND",
-  "helper": "Opens your email app with a draft for you to review and send.",
-  "prepared": "Your email draft is ready. If your email app did not open, copy the message below.",
-  "copy": "COPY_MESSAGE",
-  "copied": "COPIED",
-  "copyFailed": "Copy is unavailable. Select and copy your message below.",
-  "draftLabel": "Your message",
+  "sending": "TRANSMITTING",
+  "helper": "Send your message directly from this form. All fields are required.",
+  "characters": "characters",
+  "honeypotLabel": "Leave this field empty",
+  "states": { "idle": "READY", "validating": "VALIDATING", "sending": "TRANSMITTING", "success": "MESSAGE_SENT", "error": "ACTION_REQUIRED" },
+  "feedback": {
+    "success": "Your message has been accepted by the email service. Thank you for getting in touch.",
+    "validation": "Please check the highlighted fields and try again.",
+    "network": "The connection was interrupted. Your message is preserved; retry the same message to check its status safely.",
+    "timeout": "We couldn't confirm the result in time. Your message may have been sent. Retry the unchanged message to check its status.",
+    "uncertain": "The email service did not confirm delivery. Your message may have been sent. Please wait before sending another message.",
+    "pending": "This message is still being processed. Please wait a moment, then retry without changing it.",
+    "rateLimited": "Too many requests. Please wait 10 minutes before trying again.",
+    "unavailable": "Sending is temporarily unavailable. Your message is preserved. Please try again later."
+  },
   "fields": [
-    {
-      "name": "name",
-      "label": "FULL_NAME",
-      "placeholder": "John Doe",
-      "type": "text",
-      "autocomplete": "name",
-      "maxLength": 120
-    },
-    {
-      "name": "email",
-      "label": "EMAIL_ADDR",
-      "placeholder": "john@example.com",
-      "type": "email",
-      "autocomplete": "email",
-      "maxLength": 254
-    },
-    {
-      "name": "message",
-      "label": "MESSAGE_INPUT",
-      "placeholder": "Tell me about your project or opportunity...",
-      "type": "textarea",
-      "maxLength": 5000
-    }
+    { "name": "name", "label": "Full Name", "placeholder": "Your full name", "type": "text", "autocomplete": "name", "maxLength": 120 },
+    { "name": "email", "label": "Email Address", "placeholder": "you@example.com", "type": "email", "autocomplete": "email", "maxLength": 254 },
+    { "name": "subject", "label": "Subject", "placeholder": "What would you like to discuss?", "type": "text", "maxLength": 160, "wide": true },
+    { "name": "message", "label": "Message", "placeholder": "Tell me about your project or opportunity...", "type": "textarea", "maxLength": 5000, "wide": true }
   ],
   "errors": {
-    "name": "Please enter your name.",
-    "email": "Please enter a valid email address.",
-    "message": "Please describe your requirements."
+    "name": "Enter your full name (up to 120 characters, on one line).",
+    "email": "Enter a valid email address (up to 254 characters).",
+    "subject": "Enter a subject (up to 160 characters, on one line).",
+    "message": "Enter a message (up to 5,000 characters)."
   }
 }

@@ -11,7 +11,7 @@ const site = read("site");
 const projects = read("projects");
 let server, Projects;
 before(async () => {
-  server = await createServer({ server: { middlewareMode: true, hmr: false, watch: null }, appType: "custom" });
+  server = await createServer({ optimizeDeps: { noDiscovery: true, include: [] }, server: { middlewareMode: true, hmr: false, watch: null }, appType: "custom" });
   Projects = (await server.ssrLoadModule("/src/components/Projects.jsx")).default;
 });
 after(async () => { await server?.close(); });
@@ -22,7 +22,7 @@ const render = items => renderToStaticMarkup(createElement(Projects, {
 test("configured Projects navigation keeps its label and position without duplication or mutation", () => {
   const navigation = { items: [{ target: "hero", label: "Home" }, { target: "projects", label: "My work" }] };
   const original = structuredClone(navigation);
-  const result = buildNavigation(navigation, projects, "Projects");
+  const result = buildNavigation(navigation, { ...projects, enabled: true }, "Projects");
   assert.deepEqual(result, original);
   assert.deepEqual(navigation, original);
   assert.notEqual(result.items, navigation.items);
@@ -43,7 +43,10 @@ test("current portfolio project data renders all cards and a unique Projects nav
   for (const item of projects.items) {
     for (const tag of item.technologies ?? item.tags ?? []) assert.ok(html.includes(`<span>${tag}</span>`));
   }
-  assert.equal(buildNavigation(site.navigation, projects, site.labels.projectsNavigation).items.filter(item => item.target === "projects").length, 1);
+  assert.equal(buildNavigation(site.navigation, projects, site.labels.projectsNavigation).items.filter(item => item.target === "projects").length, projects.enabled && projects.items.length ? 1 : 0);
+});
+test("disabled Projects removes its configured navigation link", () => {
+  assert.equal(buildNavigation({ items: [{ target: "projects", label: "Projects" }] }, { enabled: false, items: [] }, "Projects").items.length, 0);
 });
 test("project cards accept both field conventions and omitted optional tags", () => {
   const base = { id: "sample", title: "Sample", description: "Example" };

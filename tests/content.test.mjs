@@ -3,9 +3,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
   buildResume,
-  buildContactDraft,
-  validateContact,
 } from "../src/utils/content.mjs";
+import { validateContact } from "../src/utils/contact.mjs";
 const read = (name) =>
   JSON.parse(
     readFileSync(
@@ -25,7 +24,7 @@ test("whitespace-only fields fail validation and malformed email is rejected", (
         contact.errors,
       ),
     ),
-    ["name", "email", "message"],
+    ["name", "email", "subject", "message"],
   );
 });
 test("valid contact input accepts international names and trims email", () => {
@@ -34,25 +33,13 @@ test("valid contact input accepts international names and trims email", () => {
       {
         name: "நரேந்திரன்",
         email: " person+test@example.com ",
+        subject: "Project inquiry",
         message: "Hello",
       },
       contact.errors,
     ),
     {},
   );
-});
-test("contact draft encodes user-controlled query delimiters and Unicode safely", () => {
-  const values = {
-    name: "Test & Team",
-    email: "test@example.com",
-    message: "தமிழ் &subject=injected? #hello",
-  };
-  const result = buildContactDraft(values, contact);
-  const url = new URL(result.href);
-  assert.equal(url.searchParams.get("subject"), contact.subject);
-  assert.equal(url.searchParams.get("body"), result.body);
-  assert.equal([...url.searchParams.keys()].length, 2);
-  assert.ok(result.body.includes(values.message));
 });
 test("resume uses changed JSON content and marks the supplied sample", () => {
   const sampleNotice = "SAMPLE RESUME — Replace before sharing.";
