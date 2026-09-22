@@ -1,4 +1,9 @@
 export const paths = {
+  monitor: "M3 4h18v13H3z M8 21h8 M12 17v4",
+  server: "M3 3h18v7H3z M3 14h18v7H3z M7 6.5h.01 M7 17.5h.01",
+  database: "M20 5c0 2-4 3-8 3S4 7 4 5s4-3 8-3 8 1 8 3z M4 5v14c0 2 4 3 8 3s8-1 8-3V5 M4 12c0 2 4 3 8 3s8-1 8-3",
+  "git-branch": "M6 3v12 M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0 M21 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0 M18 9c0 6-12 0-12 6",
+  tool: "M14 6a5 5 0 0 0-6 6L2 18l4 4 6-6a5 5 0 0 0 6-6l-3 3-4-4z",
   terminal: "M4 5h16v14H4z M7 9l3 3-3 3 M13 15h4",
   link: "M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2 M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2",
   mail: "M3 5h18v14H3z M3 6l9 7 9-7",

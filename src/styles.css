@@ -966,9 +966,26 @@ button:hover {
   margin-bottom: 32px;
 }
 .contact form,
-.draft-result {
+.contact-intro {
   max-width: 672px;
 }
+.contact-intro { color: var(--muted); margin: -12px 0 28px; }
+.contact-required { color: #ffb4ab; }
+.contact-count { color: var(--muted); font: 0.75rem/1.5 var(--mono); text-align: right; margin-top: 6px; }
+.contact .field label { letter-spacing: 0; }
+.contact .button-primary { min-width: 232px; }
+.contact .button-primary:disabled { opacity: 0.7; transform: none; box-shadow: none; cursor: progress; }
+.contact-trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.contact-status { min-height: 94px; margin-top: 20px; padding: 16px 0; border-top: 1px solid var(--border); }
+.contact-status-code { display: inline-flex; align-items: center; gap: 10px; font: 500 0.75rem/1.5 var(--mono); color: var(--cyan); }
+.contact-status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+.contact-status p { font-size: 0.875rem; color: var(--muted); margin-top: 8px; max-width: 60ch; }
+.contact-status--error .contact-status-code { color: #ffb4ab; }
+@media (prefers-reduced-motion: no-preference) {
+  .contact-status--sending .contact-status-dot { animation: contact-pulse 1.2s ease-in-out infinite; }
+  .contact-status--success p { animation: quote-fade 200ms ease-out; }
+}
+@keyframes contact-pulse { 50% { opacity: 0.35; } }
 .contact-fields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1038,19 +1055,6 @@ textarea[aria-invalid="true"] {
   color: #ffb4ab;
   font-size: 0.875rem;
   margin-top: 6px;
-}
-.draft-result {
-  margin-top: 24px;
-  padding: 20px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-.draft-result p {
-  font-size: 0.875rem;
-  margin-bottom: 12px;
-}
-.draft-result textarea {
-  margin-bottom: 12px;
 }
 .footer {
   padding-top: 32px;

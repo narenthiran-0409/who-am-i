@@ -19,7 +19,7 @@ npm run build
 npm run preview
 ```
 
-`npm run build` validates content and local assets before compiling. `npm run validate` runs the content check on its own. Deploy the resulting `dist/` directory to a static host. The React app requires no server, database, environment variables, or API keys.
+`npm run build` validates content and local assets before compiling. `npm run validate` runs the content check on its own. Deploy `dist/` to a static host. Direct contact delivery additionally requires the ASP.NET Core API in `backend/` and backend-only SMTP configuration. No database is required. See [Contact setup](docs/CONTACT.md).
 
 ## Edit your content
 
@@ -59,7 +59,7 @@ The screenshot contains certifications rather than a separate projects section, 
 
 ### Contact behavior
 
-The form validates the fields and prepares a `mailto:` draft addressed to `contact.recipient`. The visitor reviews and sends it in their email app. The UI states this behavior and provides a copyable draft if no email client is configured. It does **not** report server delivery or send mail automatically. For direct delivery, integrate a backend or a chosen form service separately; never place private service keys in JSON or client code.
+The form sends Full Name, Email Address, Subject and Message to `POST /api/contact`. ASP.NET Core validates and rate-limits requests, then sends a TLS-authenticated SMTP message to the backend-configured recipient with the visitor as Reply-To. It does not open an email application. The UI preserves messages on errors and prevents concurrent submissions. Success means SMTP acceptance, not confirmed inbox placement. SMTP credentials are never part of React or its JSON. Setup, testing and deployment requirements are in [docs/CONTACT.md](docs/CONTACT.md).
 
 ## Structure
 

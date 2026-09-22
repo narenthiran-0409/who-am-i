@@ -1,4 +1,6 @@
 import { paths } from "../src/utils/icons.mjs";
+import { contactLimits } from "../src/utils/contact.mjs";
+import { buildNavigation } from "../src/utils/content.mjs";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -66,8 +68,6 @@ for (const item of [...data.journey.education, ...data.journey.experience]) {
 }
 required(data.profile.intro, "profile.intro");
 required(data.site.meta.title, "site.meta.title");
-if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.contact.recipient))
-  fail("contact.recipient must be an email address");
 const sections = new Set([
   "hero",
   "about",
@@ -78,7 +78,7 @@ const sections = new Set([
   ...(data.projects.enabled && data.projects.items.length ? ["projects"] : []),
 ]);
 const navigationTargets = new Set();
-for (const item of data.site.navigation.items) {
+for (const item of buildNavigation(data.site.navigation, data.projects, data.site.labels.projectsNavigation).items) {
   if (navigationTargets.has(item.target))
     fail("duplicate navigation target: " + item.target);
   navigationTargets.add(item.target);
@@ -144,12 +144,18 @@ if (data.profile.heroVideo) {
 }
 for (const f of data.contact.fields) {
   required(f.label, "contact.fields.label");
-  if (!["name", "email", "message"].includes(f.name))
+  if (!Object.hasOwn(contactLimits, f.name))
     fail("unknown contact field " + f.name);
+  if (f.maxLength !== contactLimits[f.name]) fail("contact field limit mismatch: " + f.name);
+  required(data.contact.errors[f.name], "contact.errors." + f.name);
 }
-for (const f of ["name", "email", "message"])
+for (const f of Object.keys(contactLimits))
   if (data.contact.fields.filter((v) => v.name === f).length !== 1)
     fail("contact requires exactly one " + f + " field");
+for (const state of ["idle", "validating", "sending", "success", "error"])
+  required(data.contact.states[state], "contact.states." + state);
+for (const code of ["success", "validation", "network", "timeout", "uncertain", "pending", "rateLimited", "unavailable"])
+  required(data.contact.feedback[code], "contact.feedback." + code);
 console.log(
   "Validated 7 JSON data files, IDs, navigation, icons, URLs, and local assets.",
 );
