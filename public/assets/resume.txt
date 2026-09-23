@@ -7,6 +7,7 @@ ABOUT
 I'm a Software Developer with 3.5+ years of experience at Sierra Digital, building enterprise web applications and data-driven platforms. I work across backend development with ASP.NET Core, .NET 8 Web API, Entity Framework Core, Dapper, and SQL Server, and frontend development with React and JavaScript. I enjoy transforming complex workflows into secure, scalable, and intuitive products.
 
 SKILLS
+<<<<<<< HEAD
 C# (Backend / .NET), VB.NET (Backend / .NET), ASP.NET MVC (Backend / .NET), WPF (Backend / .NET), Entity Framework (Backend / .NET), JavaScript (Frontend), jQuery (Frontend), AJAX (Frontend), React JS (Frontend), MS SQL Server (Database), PostgreSQL (Database), AWS (Cloud & DevOps), Azure Cloud (Cloud & DevOps), Git (Cloud & DevOps), Version Control (Cloud & DevOps)
 
 EXPERIENCE
@@ -19,6 +20,24 @@ Learned .NET skills.
 
 Technical Trainee | Sierra Digital, Coimbatore
 Learned .NET skills.
+=======
+C# (Backend / .NET), VB.NET (Backend / .NET), .NET (Backend / .NET), ASP.NET Core Web API (Backend / .NET), ASP.NET Core MVC (Backend / .NET), Entity Framework Core (Backend / .NET), ADO.NET (Backend / .NET), Dapper (Backend / .NET), REST API (Backend / API), gRPC (Backend / API), Microservices (Backend / Architecture), WPF (Desktop / .NET), JavaScript (Frontend), React (Frontend), jQuery (Frontend), AJAX (Frontend), Bootstrap (Frontend), Tailwind CSS (Frontend), Node.js (Tools & Runtime), Microsoft SQL Server (Database), PostgreSQL (Database), AWS (Cloud & DevOps), IIS (Cloud & DevOps), Azure DevOps (Cloud & DevOps), Git (Version Control), GitHub (Version Control), Visual Studio (Development Tools), Visual Studio Code (Development Tools), Postman (Development Tools), SQL Server Management Studio (Development Tools)
+
+EXPERIENCE
+Senior Software Developer | Sierra Digital, Coimbatore | 2022 - Present
+Build and maintain enterprise business applications using .NET, React, SQL Server, and modern web technologies.
+Develop and integrate secure Web APIs, backend services, data workflows, dashboards, and cloud-connected solutions.
+Configure databases and perform schema mapping for enterprise master data, with API-level validation and unit testing.
+Implement client data migrations through SaaS Web APIs while maintaining data integrity and client-specific requirements.
+Develop operational reports and data-driven solutions to support business and technical requirements.
+Collaborate with QA and development teams, participate in code reviews, troubleshoot application issues, and manage source code using Git.
+
+Software Developer | Sierra Digital, Coimbatore
+Developed and maintained enterprise applications using C#, VB.NET, ASP.NET MVC, WPF, Web APIs, and SQL Server, including API integrations, database configuration, data migration, and operational reporting.
+
+Technical Trainee | Sierra Digital, Coimbatore
+Built a strong foundation in .NET development, C#, VB.NET, ASP.NET MVC, WPF, SQL Server, debugging, and enterprise application development practices.
+>>>>>>> d2cccc1 (Initial commit)
 
 EDUCATION
 Master of Computer Applications (M.C.A) | Bharathiar University, Coimbatore | 2025 - present
