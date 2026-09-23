@@ -76,14 +76,8 @@ export default function Contact({ data }) {
         <div className="contact-lead">
         <span className="eyebrow">{data.eyebrow}</span>
         <h2 id="contact-title" aria-label={data.title}>{data.headingLead}<span>{data.headingAccent}</span></h2>
-<<<<<<< HEAD
-        <p className="contact-intro">{data.description}</p>
-        </div>
-        <div className="contact-card">
-=======
         </div>
         <div className="contact-card edge-glow edge-glow--ambient">
->>>>>>> d2cccc1 (Initial commit)
         <header className="contact-card-header">
           <span className="contact-card-icon"><Icon name={data.cardIcon} size={30} /></span>
           <div><span className="eyebrow">{data.cardEyebrow}</span><h3>{data.cardTitle}</h3><p>{data.cardDescription}</p></div>
@@ -117,11 +111,7 @@ export default function Contact({ data }) {
             <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" maxLength={200} />
           </div>
           <button type="submit" className="button button-primary" disabled={locked}>
-<<<<<<< HEAD
-            <Icon name="send" size={20} />{locked ? data.sending : data.submit}<Icon name="right" size={18} className="contact-send-arrow" />
-=======
             <Icon name="send" size={20} /><span>{locked ? data.sending : data.submit}</span><Icon name="right" size={18} className="contact-send-arrow" />
->>>>>>> d2cccc1 (Initial commit)
           </button>
           <p className="form-helper">{data.helper}</p>
           <div className={`contact-status contact-status--${state}`} role="status" aria-live="polite" aria-atomic="true">

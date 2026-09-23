@@ -7,12 +7,9 @@
   -webkit-font-smoothing: antialiased;
   --bg: #091421;
   --cyan: #00dbe7;
-<<<<<<< HEAD
-=======
   --glow-cyan: rgba(0, 219, 231, 0.9);
   --glow-cyan-soft: rgba(0, 219, 231, 0.16);
   --glow-border: rgba(0, 219, 231, 0.2);
->>>>>>> d2cccc1 (Initial commit)
   --text: #d8e3f6;
   --muted: #b9cacb;
   --border: rgba(58, 73, 75, 0.3);
@@ -524,11 +521,8 @@ button:hover {
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
   scrollbar-color: #00dbe733 transparent;
-<<<<<<< HEAD
   padding-bottom: 24px;
-=======
   padding: 8px 0 24px;
->>>>>>> d2cccc1 (Initial commit)
 }
 .certificate-badge {
   display: block;
@@ -671,21 +665,15 @@ button:hover {
   padding-top: 20px;
 }
 .skills-rail .card-rail {
-<<<<<<< HEAD
   padding-top: 4px;
-=======
   padding-top: 8px;
->>>>>>> d2cccc1 (Initial commit)
 }
 .skill-card {
   flex: 0 0 220px;
   min-width: 0;
   scroll-snap-align: start;
   padding: 24px;
-<<<<<<< HEAD
-=======
   border: 1px solid var(--glow-border);
->>>>>>> d2cccc1 (Initial commit)
   border-radius: 12px;
   transition:
     background 0.2s,
@@ -964,15 +952,12 @@ button:hover {
   gap: 24px;
 }
 .contact {
-<<<<<<< HEAD
   padding-top: 48px;
   padding-bottom: 16px;
   margin-top: 168px;
-=======
   padding-top: 32px;
   padding-bottom: 12px;
   margin-top: 96px;
->>>>>>> d2cccc1 (Initial commit)
 }
 .contact-inner {
   display: grid;
@@ -989,15 +974,12 @@ button:hover {
 }
 .contact-lead > .eyebrow::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 10px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 14px #00dbe780; }
 .contact h2 span { display: block; color: var(--cyan); }
-<<<<<<< HEAD
 .contact-card { min-width: 0; padding: clamp(24px, 3vw, 42px); border: 1px solid transparent; border-radius: 22px; background: linear-gradient(145deg, #0b202e, #08141f 40%) padding-box, linear-gradient(135deg, #27cce8a6, #193545 45%, #15728a80) border-box; box-shadow: 0 16px 48px #00000026, -8px -8px 36px #00dbe706; transition: box-shadow 200ms ease; }
 .contact-card:focus-within { box-shadow: 0 16px 48px #00000026, 0 0 32px #00dbe712; }
 .contact-card-header { display: flex; align-items: center; gap: 22px; margin-bottom: 32px; }
-=======
 .contact-card { min-width: 0; padding: clamp(24px, 2.5vw, 32px); padding-bottom: 20px; border: 1px solid transparent; border-radius: 22px; background: linear-gradient(145deg, #0b202e, #08141f 40%) padding-box, linear-gradient(135deg, #27cce8a6, #193545 45%, #15728a80) border-box; box-shadow: 0 16px 48px #00000026, -8px -8px 36px #00dbe706; transition: box-shadow 200ms ease; }
 .contact-card:focus-within { box-shadow: 0 16px 48px #00000026, 0 0 32px #00dbe712; }
 .contact-card-header { display: flex; align-items: center; gap: 22px; margin-bottom: 24px; }
->>>>>>> d2cccc1 (Initial commit)
 .contact-card-icon { display: grid; place-items: center; flex: 0 0 64px; height: 64px; border: 2px solid transparent; border-radius: 14px; color: var(--cyan); background: linear-gradient(145deg, #102638, #08202c) padding-box, linear-gradient(125deg, #aab5ff, #00dbe7 65%) border-box; box-shadow: 0 0 22px #00dbe72a, inset 0 0 18px #00dbe710; }
 .contact-card-header h3 { margin: 6px 0 8px; font-size: clamp(1.65rem, 2.5vw, 2.4rem); line-height: 1.2; letter-spacing: -0.025em; }
 .contact-card-header p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
@@ -1026,11 +1008,8 @@ button:hover {
 .contact .form-helper { text-align: center; font-size: 0.75rem; line-height: 1.65; }
 .contact .button-primary:disabled { opacity: 0.7; transform: none; box-shadow: none; cursor: progress; }
 .contact-trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-<<<<<<< HEAD
 .contact-status { min-height: 94px; margin-top: 20px; padding: 16px 0; border-top: 1px solid var(--border); }
-=======
 .contact-status { min-height: 72px; margin-top: 14px; padding: 12px 0 0; border-top: 1px solid var(--border); }
->>>>>>> d2cccc1 (Initial commit)
 .contact-status-code { display: inline-flex; align-items: center; gap: 10px; font: 500 0.75rem/1.5 var(--mono); color: var(--cyan); }
 .contact-status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
 .contact-status p { font-size: 0.875rem; color: var(--muted); margin-top: 8px; max-width: 60ch; }
@@ -1043,11 +1022,8 @@ button:hover {
 .contact-fields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-<<<<<<< HEAD
   gap: 24px;
-=======
   gap: 16px 24px;
->>>>>>> d2cccc1 (Initial commit)
 }
 .field-wide {
   grid-column: 1/-1;
@@ -1075,11 +1051,8 @@ textarea {
 }
 textarea {
   resize: vertical;
-<<<<<<< HEAD
   min-height: 120px;
-=======
   min-height: 96px;
->>>>>>> d2cccc1 (Initial commit)
 }
 input::placeholder,
 textarea::placeholder {
@@ -1100,11 +1073,7 @@ textarea[aria-invalid="true"] {
   background: #00f2ff;
   color: #00363a;
   padding: 16px 48px;
-<<<<<<< HEAD
-  margin-top: 24px;
-=======
   margin-top: 16px;
->>>>>>> d2cccc1 (Initial commit)
 }
 .button-primary:hover {
   background: #74f5ff;
@@ -1123,20 +1092,15 @@ textarea[aria-invalid="true"] {
   margin-top: 6px;
 }
 .footer {
-<<<<<<< HEAD
   padding-top: 32px;
   padding-bottom: 64px;
-=======
   padding-top: 20px;
   padding-bottom: 32px;
->>>>>>> d2cccc1 (Initial commit)
   border-top: 1px solid var(--border);
 }
 .quote-block {
   text-align: center;
 }
-<<<<<<< HEAD
-=======
 .quote-card {
   position: relative;
   isolation: isolate;
@@ -1194,7 +1158,6 @@ textarea[aria-invalid="true"] {
   opacity: 0;
   filter: blur(2px);
 }
->>>>>>> d2cccc1 (Initial commit)
 .quote-block blockquote {
   font-size: 1rem;
   font-weight: 600;
@@ -1203,10 +1166,7 @@ textarea[aria-invalid="true"] {
   color: var(--muted);
   max-width: 672px;
   margin-inline: auto;
-<<<<<<< HEAD
   animation: quote-fade 0.35s ease;
-=======
->>>>>>> d2cccc1 (Initial commit)
 }
 .quote-block blockquote:lang(ta) {
   font-family: "Noto Serif Tamil", serif;
@@ -1221,8 +1181,6 @@ textarea[aria-invalid="true"] {
     opacity: 1;
   }
 }
-<<<<<<< HEAD
-=======
 @keyframes quote-frame-reveal {
   0% { opacity: 0; clip-path: inset(0 50% round 16px); }
   18% { opacity: 1; }
@@ -1298,7 +1256,6 @@ textarea[aria-invalid="true"] {
   }
   .footer .translation-toggle { margin-top: 10px; }
 }
->>>>>>> d2cccc1 (Initial commit)
 .translation-toggle {
   margin-top: 24px;
   font: 600 0.875rem/1.5 var(--mono);
@@ -1792,8 +1749,6 @@ textarea[aria-invalid="true"] {
 @media (prefers-reduced-motion: reduce) {
   .avatar-video-media video { transition: none; }
 }
-<<<<<<< HEAD
-=======
 
 /* Shared cyan edge illumination. Base borders remain visible if masking is unavailable. */
 @property --edge-angle {
@@ -2012,4 +1967,3 @@ textarea[aria-invalid="true"] {
     opacity: 0;
   }
 }
->>>>>>> d2cccc1 (Initial commit)

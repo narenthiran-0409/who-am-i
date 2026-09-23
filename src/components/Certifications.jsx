@@ -29,11 +29,7 @@ export default function Certifications({ items, heading, labels }) {
         next={labels.next}
       >
         {items.map((item) => (
-<<<<<<< HEAD
-          <article className="certification-card" key={item.id}>
-=======
           <article className="certification-card edge-glow" key={item.id}>
->>>>>>> d2cccc1 (Initial commit)
             <div className="certificate-visual">
               {item.image ? (
                 <img src={item.image.src} alt={item.image.alt} loading="lazy" />

@@ -13,11 +13,7 @@ export default function Skills({ items, heading, labels }) {
       <CardRail className="skills-rail" label={heading.title}
         previous={labels.previous} next={labels.next}>
         {items.map((skill) => (
-<<<<<<< HEAD
-          <article className="skill-card" key={skill.id}>
-=======
           <article className="skill-card edge-glow" key={skill.id}>
->>>>>>> d2cccc1 (Initial commit)
             <div className="skill-icon">
               <Icon name={skill.icon} size={24} />
             </div>

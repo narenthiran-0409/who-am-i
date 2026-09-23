@@ -1,11 +1,7 @@
 {
   "name": "Heisgn Berg",
   "greeting": "Hello World",
-<<<<<<< HEAD
   "intro": "I’m Heisgn Berg",
-=======
-  "intro": "I’m Narenthiran",
->>>>>>> d2cccc1 (Initial commit)
   "role": "Software Developer",
   "summary": [
     {
@@ -30,15 +26,6 @@
   ],
   "facts": [
     {
-<<<<<<< HEAD
-=======
-      "label": "NAME",
-      "value": "Narenthiran R",
-      "icon": "user",
-      "href": null
-    },
-    {
->>>>>>> d2cccc1 (Initial commit)
       "label": "BIRTHDAY",
       "value": "04 Sept 2004",
       "icon": "calendar",
@@ -67,34 +54,11 @@
       "value": "MCA",
       "icon": "school",
       "href": null
-<<<<<<< HEAD
-=======
-    },{
-      "label": "CITY",
-      "value": "Coimbatore",
-      "icon": "school",
-      "href": null
->>>>>>> d2cccc1 (Initial commit)
     }
   ],
   "socialLinks": [
     {
       "label": "GitHub",
-<<<<<<< HEAD
-      "icon": "terminal",
-      "href": "https://github.com/narenthiran-0409"
-    },
-    {
-      "label": "About me",
-      "icon": "link",
-      "href": "#about"
-    },
-    {
-      "label": "Email",
-      "icon": "mail",
-      "href": "mailto:narenthiran.dll@gmail.com"
-    }
-=======
       "icon": "github",
       "href": "https://github.com/narenthiran-0409"
     },
@@ -107,7 +71,8 @@
       "label": "WhatsApp",
       "icon": "whatsapp",
       "href": "https://wa.me/7539938912"
-    },{
+    },
+    {
       "label": "Email",
       "icon": "mail",
       "href": "mailto:narenthiran.dll@gmail.com"
@@ -117,8 +82,6 @@
       "icon": "link",
       "href": "#about"
     }
-    
->>>>>>> d2cccc1 (Initial commit)
   ],
   "resume": {
     "url": null,
