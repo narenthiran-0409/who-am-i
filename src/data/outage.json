@@ -1,0 +1,19 @@
+{
+  "brand": "HEISGN BERG",
+  "badge": "CONNECTION LOST",
+  "retryBadge": "RECONNECTING",
+  "eyebrow": "BACKEND_UNREACHABLE",
+  "headline": "My server took a",
+  "headlineAccent": "tea break.",
+  "subheading": "I’m still here. The connection isn’t.",
+  "description": "Try reconnecting, or explore the saved version of my portfolio.",
+  "retry": "TRY AGAIN",
+  "retrying": "RECONNECTING…",
+  "viewSaved": "VIEW SAVED PORTFOLIO",
+  "waiting": "> waiting for the server to wake up_",
+  "connecting": "> checking the connection_",
+  "note": "Saved content may be a little out of date.",
+  "savedNotice": "You’re viewing saved portfolio content.",
+  "illustration": "/assets/server-tea-break.png",
+  "illustrationAlt": "A developer with a cup of tea gently nudges a sleepy server awake."
+}

@@ -33,7 +33,7 @@ export function cachedPortfolio(fallback, storage) {
 
 export async function fetchPortfolio(fallback, { fetcher = fetch, storage, signal } = {}) {
   const base = (import.meta.env?.VITE_PORTFOLIO_API_BASE_URL || import.meta.env?.VITE_CONTACT_API_BASE_URL || "").replace(/\/$/, "");
-  const response = await fetcher(`${base}/api/portfolio`, { signal, credentials: "omit", headers: { Accept: "application/json" } });
+  const response = await fetcher(`${base}/api/portfolio`, { signal, cache: "no-cache", credentials: "omit", headers: { Accept: "application/json" } });
   if (!response.ok) throw new Error("Portfolio API unavailable");
   const payload = await response.json();
   if (!validPortfolio(payload, fallback)) throw new Error("Invalid portfolio content");
