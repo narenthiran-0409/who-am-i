@@ -16,7 +16,7 @@ dotnet run --project backend/Portfolio.Contact.Api
 In a second terminal, run `npm run dev` and open http://localhost:4173/#contact.
 Vite proxies `/api` to http://127.0.0.1:5080. `CONTACT_API_PROXY_TARGET` in a local `.env` can override the development target. It is not a browser variable.
 
-Without SMTP credentials, Development runs but submissions return 503; the UI displays an honest error and preserves input. Production refuses to start with incomplete email settings. There is no production mock sender.
+Without SMTP credentials, the API can serve public portfolio content, but contact submissions return 503 in every environment; the UI displays an honest error and preserves input. There is no production mock sender. Configure and verify SMTP before enabling contact delivery on the live site.
 
 ## Email configuration
 

@@ -6,7 +6,7 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 const root = fileURLToPath(new URL("../", import.meta.url));
 const read = (name) =>
-  JSON.parse(readFileSync(resolve(root, "src/data", name + ".json"), "utf8"));
+  JSON.parse(readFileSync(resolve(root, "backend/Portfolio.Contact.Api/Content", name + ".json"), "utf8"));
 const names = [
   "site",
   "profile",

@@ -23,7 +23,9 @@ npm run preview
 
 ## Edit your content
 
-All portfolio content and UI copy live in `src/data/`. React components contain presentation and behavior only.
+All portfolio content and UI copy live in `backend/Portfolio.Contact.Api/Content/`. React components contain presentation and behavior only.
+
+The public `GET /api/portfolio` endpoint serves these files at runtime, with a bundled/last-known fallback in React. See [JSON content setup and editing](docs/PORTFOLIO-DATA.md). Contact email remains configured separately on the backend.
 
 | File                  | What to update                                                               |
 | --------------------- | ---------------------------------------------------------------------------- |

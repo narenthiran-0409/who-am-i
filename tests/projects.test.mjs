@@ -6,7 +6,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
 import { buildNavigation } from "../src/utils/content.mjs";
 
-const read = name => JSON.parse(readFileSync(new URL(`../src/data/${name}.json`, import.meta.url), "utf8"));
+const read = name => JSON.parse(readFileSync(new URL(`../backend/Portfolio.Contact.Api/Content/${name}.json`, import.meta.url), "utf8"));
 const site = read("site");
 const projects = read("projects");
 let server, Projects;

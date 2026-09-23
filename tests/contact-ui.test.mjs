@@ -5,7 +5,7 @@ import { JSDOM } from "jsdom";
 import { createServer } from "vite";
 import { act, createElement } from "react";
 
-const data = JSON.parse(readFileSync(new URL("../src/data/contact.json", import.meta.url)));
+const data = JSON.parse(readFileSync(new URL("../backend/Portfolio.Contact.Api/Content/contact.json", import.meta.url)));
 let server, Contact, createRoot, dom;
 const originals = new Map();
 before(async () => {

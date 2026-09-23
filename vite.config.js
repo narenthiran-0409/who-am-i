@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => {
       transformIndexHtml(html) {
         const { meta } = JSON.parse(
           readFileSync(
-            new URL("./src/data/site.json", import.meta.url),
+            new URL("./backend/Portfolio.Contact.Api/Content/site.json", import.meta.url),
             "utf8",
           ),
         );

@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { buildResume } from "../src/utils/content.mjs";
 const read = (name) =>
   JSON.parse(
-    readFileSync(new URL(`../src/data/${name}.json`, import.meta.url), "utf8"),
+    readFileSync(new URL(`../backend/Portfolio.Contact.Api/Content/${name}.json`, import.meta.url), "utf8"),
   );
 writeFileSync(
   new URL("../public/assets/resume.txt", import.meta.url),

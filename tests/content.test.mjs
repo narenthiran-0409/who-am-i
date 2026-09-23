@@ -8,7 +8,7 @@ import { validateContact } from "../src/utils/contact.mjs";
 const read = (name) =>
   JSON.parse(
     readFileSync(
-      new URL("../src/data/" + name + ".json", import.meta.url),
+      new URL("../backend/Portfolio.Contact.Api/Content/" + name + ".json", import.meta.url),
       "utf8",
     ),
   );

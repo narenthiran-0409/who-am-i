@@ -1,14 +1,6 @@
 import { useEffect } from "react";
 import { buildNavigation } from "./utils/content.mjs";
-import {
-  site,
-  profile,
-  certifications,
-  skills,
-  journey,
-  projects,
-  contact,
-} from "./data";
+import usePortfolio from "./hooks/usePortfolio";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -19,6 +11,7 @@ import Journey from "./components/Journey";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 export default function App() {
+  const { site, profile, certifications, skills, journey, projects, contact } = usePortfolio();
   const navigation = buildNavigation(site.navigation, projects, site.labels.projectsNavigation);
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -37,6 +30,8 @@ export default function App() {
           profile={profile}
           heading={site.sections.about}
           labels={site.labels}
+          skills={skills}
+          journey={journey}
         />
         <Certifications
           items={certifications}

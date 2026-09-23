@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { contactLimits, validateContact, sendContact } from "../src/utils/contact.mjs";
-const data = JSON.parse(readFileSync(new URL("../src/data/contact.json", import.meta.url)));
+const data = JSON.parse(readFileSync(new URL("../backend/Portfolio.Contact.Api/Content/contact.json", import.meta.url)));
 const valid = { name: "Visitor", email: "person@example.com", subject: "Hello", message: "A project idea", website: "" };
 
 test("contact enforces every configured maximum and rejects header control characters", () => {
