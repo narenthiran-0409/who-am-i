@@ -2,6 +2,12 @@
   "eyebrow": "READY_FOR_COLLABORATION",
   "title": "Contact",
   "description": "Have a project in mind or an opportunity to share? Let's connect.",
+  "headingLead": "Let's",
+  "headingAccent": "Connect",
+  "cardEyebrow": "SEND A MESSAGE",
+  "cardTitle": "Get In Touch",
+  "cardDescription": "Tell me what you have in mind. I'd love to hear from you.",
+  "cardIcon": "mail",
   "submit": "EXECUTE_SEND",
   "sending": "TRANSMITTING",
   "helper": "Send your message directly from this form. All fields are required.",
@@ -19,10 +25,10 @@
     "unavailable": "Sending is temporarily unavailable. Your message is preserved. Please try again later."
   },
   "fields": [
-    { "name": "name", "label": "Full Name", "placeholder": "Your full name", "type": "text", "autocomplete": "name", "maxLength": 120 },
-    { "name": "email", "label": "Email Address", "placeholder": "you@example.com", "type": "email", "autocomplete": "email", "maxLength": 254 },
-    { "name": "subject", "label": "Subject", "placeholder": "What would you like to discuss?", "type": "text", "maxLength": 160, "wide": true },
-    { "name": "message", "label": "Message", "placeholder": "Tell me about your project or opportunity...", "type": "textarea", "maxLength": 5000, "wide": true }
+    { "name": "name", "icon": "contact-user", "label": "Full Name", "placeholder": "Your full name", "type": "text", "autocomplete": "name", "maxLength": 120 },
+    { "name": "email", "icon": "mail", "label": "Email Address", "placeholder": "you@example.com", "type": "email", "autocomplete": "email", "maxLength": 254 },
+    { "name": "subject", "icon": "contact-message", "label": "Subject", "placeholder": "What would you like to discuss?", "type": "text", "maxLength": 160, "wide": true },
+    { "name": "message", "icon": "terminal", "label": "Message", "placeholder": "Tell me about your project or opportunity...", "type": "textarea", "maxLength": 5000, "wide": true }
   ],
   "errors": {
     "name": "Enter your full name (up to 120 characters, on one line).",

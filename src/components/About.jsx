@@ -1,7 +1,16 @@
+import { useEffect, useState } from "react";
+import { buildResume } from "../utils/content.mjs";
 import SectionHeading from "./SectionHeading";
 import Icon from "./Icon";
 import SmartLink from "./SmartLink";
 export default function About({ profile, heading, labels, skills, journey }) {
+  const [resumeUrl, setResumeUrl] = useState(null);
+  useEffect(() => {
+    if (profile.resume.url || !skills || !journey) { setResumeUrl(null); return; }
+    const url = URL.createObjectURL(new Blob([buildResume(profile, skills, journey)], { type: "text/plain;charset=utf-8" }));
+    setResumeUrl(url);
+    return () => URL.revokeObjectURL(url);
+  }, [profile, skills, journey]);
   return (
     <section
       id="about"
@@ -28,7 +37,7 @@ export default function About({ profile, heading, labels, skills, journey }) {
           <div className="resume-row">
             <a
               className="button button-outline"
-              href={profile.resume.url || profile.resume.generatedUrl}
+              href={profile.resume.url || resumeUrl || profile.resume.generatedUrl}
               download={
                 profile.resume.url ? undefined : profile.resume.filename
               }

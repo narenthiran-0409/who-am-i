@@ -59,18 +59,28 @@
   "socialLinks": [
     {
       "label": "GitHub",
-      "icon": "terminal",
+      "icon": "github",
       "href": "https://github.com/narenthiran-0409"
     },
     {
-      "label": "About me",
-      "icon": "link",
-      "href": "#about"
+      "label": "LinkedIn",
+      "icon": "linkedin",
+      "href": "https://www.linkedin.com/"
+    },
+    {
+      "label": "WhatsApp",
+      "icon": "whatsapp",
+      "href": "https://wa.me/7539938912"
     },
     {
       "label": "Email",
       "icon": "mail",
       "href": "mailto:narenthiran.dll@gmail.com"
+    },
+    {
+      "label": "About me",
+      "icon": "link",
+      "href": "#about"
     }
   ],
   "resume": {

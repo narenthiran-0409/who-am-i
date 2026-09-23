@@ -6,4 +6,5 @@
     <UserSecretsId>who-am-i-contact-api</UserSecretsId>
   </PropertyGroup>
   <ItemGroup><PackageReference Include="MailKit" Version="4.18.0" /></ItemGroup>
+  <ItemGroup><Content Update="Content/**/*.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" /></ItemGroup>
 </Project>

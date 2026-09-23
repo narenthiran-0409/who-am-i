@@ -52,7 +52,7 @@ function Timeline({ items, label, type, timelineLabels }) {
       <ol className="timeline">
         {items.map((item) => (
           <li key={item.id} className={isCurrent(item) ? "current" : "past"}>
-            <article className="timeline-card panel">
+            <article className="timeline-card panel edge-glow">
               <span className={`timeline-status ${isCurrent(item) ? "is-current" : ""}`}>
                 {type === "education"
                   ? (isCurrent(item) ? timelineLabels.currentEducation : timelineLabels.pastEducation)

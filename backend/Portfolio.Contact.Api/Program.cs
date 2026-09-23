@@ -9,10 +9,10 @@ builder.Services.AddControllers();
 builder.Services.AddProblemDetails();
 builder.Services.AddExceptionHandler(options => options.ExceptionHandler = async context =>
     await Results.Problem(statusCode: 500, title: "The request could not be completed.").ExecuteAsync(context));
-builder.Services.AddOptions<EmailOptions>().BindConfiguration("Email")
-    .Validate(options => builder.Environment.IsDevelopment() || options.IsConfigured,
-        "Configure Email host, port, TLS mode, credentials, sender and recipient on the backend.")
-    .ValidateOnStart();
+builder.Services.AddOptions<EmailOptions>().BindConfiguration("Email");
+// Public content can run before SMTP is configured. Contact returns 503 until configured.
+builder.Services.AddSingleton<PortfolioContent>();
+builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddSingleton<IContactEmailSender, SmtpEmailSender>();
 builder.Services.AddSingleton<SubmissionStore>();
 var origins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? [];
@@ -20,7 +20,8 @@ if (origins.Length == 0 || origins.Any(origin => !Uri.TryCreate(origin, UriKind.
     || uri.Scheme is not ("http" or "https") || origin != uri.GetLeftPart(UriPartial.Authority)))
     throw new InvalidOperationException("Configure exact Cors:AllowedOrigins, without paths or wildcards.");
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy.WithOrigins(origins)
-    .WithMethods("POST").WithHeaders("Content-Type", "Idempotency-Key")));
+    .WithMethods("GET", "POST").WithHeaders("Content-Type", "Idempotency-Key", "If-None-Match")
+    .WithExposedHeaders("ETag")));
 builder.Services.Configure<ForwardedHeadersOptions>(options => {
     options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
     options.ForwardLimit = 1;
@@ -33,9 +34,9 @@ builder.Services.AddRateLimiter(options => {
         context.HttpContext.Response.Headers.RetryAfter = "600";
         await context.HttpContext.Response.WriteAsJsonAsync(new { code = "rate_limited" }, token);
     };
-    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(_ =>
-        RateLimitPartition.GetFixedWindowLimiter("all", _ => new FixedWindowRateLimiterOptions {
-            PermitLimit = 100, Window = TimeSpan.FromMinutes(10), QueueLimit = 0
+    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(context =>
+        RateLimitPartition.GetFixedWindowLimiter(context.Request.Path == "/api/portfolio" ? "content" : "contact", key => new FixedWindowRateLimiterOptions {
+            PermitLimit = key == "content" ? 1000 : 100, Window = TimeSpan.FromMinutes(10), QueueLimit = 0
         }));
     options.AddPolicy("contact", context => RateLimitPartition.GetFixedWindowLimiter(
         context.Connection.RemoteIpAddress?.ToString() ?? "unknown",
