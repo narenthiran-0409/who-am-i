@@ -37,6 +37,9 @@ export async function sendContact(values, requestId, { signal, fetcher = fetch }
   }
   const body = await response.json().catch(() => null);
   if (response.ok && body?.status === "accepted" && typeof body.reference === "string") return body;
+  // A conflict is successful only when the API explicitly confirms prior acceptance.
+  // The current backend also uses 409 for pending requests and mismatched payloads.
+  if (response.status === 409 && (body?.status === "accepted" || body?.code === "already_accepted" || body?.code === "already_delivered")) return body;
   if (response.status === 400) throw new ContactError("validation", body?.errors || {});
   if (response.status === 429) throw new ContactError("rateLimited");
   if (response.status === 409) throw new ContactError("pending");

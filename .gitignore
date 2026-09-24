@@ -9,5 +9,6 @@ coverage/
 test-results/
 **/bin/
 **/obj/
+**/.vs/
 backend/publish/
 **/appsettings.Local.json

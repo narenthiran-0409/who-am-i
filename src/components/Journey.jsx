@@ -1,6 +1,19 @@
 import Icon from "./Icon";
 import SectionHeading from "./SectionHeading";
-const isCurrent = (item) => /\b(present|current|ongoing)\b/i.test(item.period ?? "");
+import { roleDuration, rolePeriod } from "../utils/timeline.mjs";
+const isCurrent = (item) => item.roleDates ? item.roleDates.end === null : /\b(present|current|ongoing)\b/i.test(item.period ?? "");
+function RolePeriod({ role }) {
+  const period = rolePeriod(role);
+  const duration = roleDuration(role.roleDates);
+  if (!period) return null;
+  return <div className="role-period-row">
+    <p className="role-period">{period}</p>
+    {duration && <span className="role-duration" aria-label={`Duration: ${duration}`} title={duration}>
+      <span className="role-duration-full" aria-hidden="true">{duration}</span>
+      <span className="role-duration-short" aria-hidden="true">{duration.replace(/years?/g, "yr").replace(/months?/g, "mo")}</span>
+    </span>}
+  </div>;
+}
 function RoleDetails({ role }) {
   return <>
     {role.description && <p>{role.description}</p>}
@@ -29,7 +42,7 @@ function OrganizationTimeline({ item, labels }) {
             <span className={`timeline-status ${isCurrent(role) ? "is-current" : ""}`}>
               {isCurrent(role) ? labels.currentExperience : labels.pastExperience}
             </span>
-            {role.period && <p className="role-period">{role.period}</p>}
+            <RolePeriod role={role} />
             <h5>{role.title}</h5>
             <RoleDetails role={role} />
           </li>

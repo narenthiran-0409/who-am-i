@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Open http://localhost:4173. For the production build:
+Start the backend in a second terminal with `dotnet run --project backend/Portfolio.Contact.Api` (.NET 10 SDK required). Open http://localhost:4173. For the production build:
 
 ```sh
 npm test
@@ -19,13 +19,13 @@ npm run build
 npm run preview
 ```
 
-`npm run build` validates content and local assets before compiling. `npm run validate` runs the content check on its own. Deploy `dist/` to a static host. Direct contact delivery additionally requires the ASP.NET Core API in `backend/` and backend-only SMTP configuration. No database is required. See [Contact setup](docs/CONTACT.md).
+`npm run build` validates content and local assets before compiling. `npm run validate` runs the content check on its own. Deploy `dist/` to a static host. Portfolio content requires the ASP.NET Core API in `backend/`. Contact delivery also requires backend-only SMTP configuration. No database is required. See [Contact setup](docs/CONTACT.md).
 
 ## Edit your content
 
 All portfolio content and UI copy live in `backend/Portfolio.Contact.Api/Content/`. React components contain presentation and behavior only.
 
-The public `GET /api/portfolio` endpoint serves these files at runtime, with a bundled/last-known fallback in React. See [JSON content setup and editing](docs/PORTFOLIO-DATA.md). Contact email remains configured separately on the backend.
+The public `GET /api/portfolio` endpoint serves these files at runtime, as the only source of portfolio data in React. See [JSON content setup and editing](docs/PORTFOLIO-DATA.md). Contact email remains configured separately on the backend.
 
 | File                  | What to update                                                               |
 | --------------------- | ---------------------------------------------------------------------------- |
@@ -68,7 +68,6 @@ The form sends Full Name, Email Address, Subject and Message to `POST /api/conta
 ```text
 src/
   components/    Reusable sections, navigation, rail, links, icons
-  data/          Editable JSON content and copy
   utils/         Contact validation/draft and résumé generation
   App.jsx        Section composition
   styles.css     Design tokens, layout, breakpoints and motion

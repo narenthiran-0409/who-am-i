@@ -1,5 +1,5 @@
-const cacheKey = "portfolio-content-v1";
-const cacheLifetime = 7 * 24 * 60 * 60 * 1000;
+import schema from "./portfolio-schema.json" with { type: "json" };
+import { resolveProfileExperience } from "./experience.mjs";
 
 // Preserve the rendering contract while allowing different content and array lengths.
 function matches(value, sample) {
@@ -8,7 +8,7 @@ function matches(value, sample) {
     sample.length === 0 || sample.some(example => matches(item, example)));
   if (typeof sample === "object") return value !== null && typeof value === "object" && !Array.isArray(value)
     && Object.entries(sample).every(([key, example]) => matches(value[key], example));
-  return typeof value === typeof sample;
+  return typeof value === sample;
 }
 
 function safeLinks(value, key = "") {
@@ -18,25 +18,15 @@ function safeLinks(value, key = "") {
   return !value || typeof value !== "object" || Object.entries(value).every(([k, v]) => safeLinks(v, k));
 }
 
-export function validPortfolio(payload, fallback) {
-  return payload?.schemaVersion === 1 && matches(payload.data, fallback) && safeLinks(payload.data);
+export function validPortfolio(payload) {
+  return payload?.schemaVersion === 1 && matches(payload.data, schema) && safeLinks(payload.data);
 }
 
-export function cachedPortfolio(fallback, storage) {
-  try {
-    const cached = JSON.parse(storage?.getItem(cacheKey) || "null");
-    if (cached && Date.now() - cached.savedAt < cacheLifetime && validPortfolio(cached.payload, fallback))
-      return cached.payload.data;
-  } catch { /* Private mode, quota errors and old cache must not break the portfolio. */ }
-  return fallback;
-}
-
-export async function fetchPortfolio(fallback, { fetcher = fetch, storage, signal } = {}) {
+export async function fetchPortfolio({ fetcher = fetch, signal } = {}) {
   const base = (import.meta.env?.VITE_PORTFOLIO_API_BASE_URL || import.meta.env?.VITE_CONTACT_API_BASE_URL || "").replace(/\/$/, "");
-  const response = await fetcher(`${base}/api/portfolio`, { signal, cache: "no-cache", credentials: "omit", headers: { Accept: "application/json" } });
+  const response = await fetcher(`${base}/api/portfolio`, { signal, cache: "no-store", credentials: "omit", headers: { Accept: "application/json" } });
   if (!response.ok) throw new Error("Portfolio API unavailable");
   const payload = await response.json();
-  if (!validPortfolio(payload, fallback)) throw new Error("Invalid portfolio content");
-  try { storage?.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), payload })); } catch { /* Optional cache. */ }
-  return payload.data;
+  if (!validPortfolio(payload)) throw new Error("Invalid portfolio content");
+  return { ...payload.data, profile: resolveProfileExperience(payload.data.profile, payload.data.journey) };
 }

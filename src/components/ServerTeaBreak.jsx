@@ -6,7 +6,7 @@ export function ReconnectIcon() {
   return <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><path d="M20 7v5h-5M20 12a8 8 0 1 0-2 5M20 7l-3 3" /></svg>;
 }
 
-export default function ServerTeaBreak({ retrying, onRetry, onViewSaved }) {
+export default function ServerTeaBreak({ retrying, onRetry }) {
   const title = useRef(null);
   useEffect(() => {
     title.current?.focus({ preventScroll: true });
@@ -31,7 +31,6 @@ export default function ServerTeaBreak({ retrying, onRetry, onViewSaved }) {
         <p className="tea-break-description">{copy.description}</p>
         <div className="tea-break-actions">
           <button className="tea-break-retry" onClick={onRetry} disabled={retrying}><ReconnectIcon />{retrying ? copy.retrying : copy.retry}</button>
-          <button className="tea-break-saved" onClick={onViewSaved}>{copy.viewSaved}</button>
         </div>
         <p className="tea-break-terminal" role="status"><span aria-hidden="true" />{retrying ? copy.connecting : copy.waiting}</p>
         <p className="tea-break-note">{copy.note}</p>

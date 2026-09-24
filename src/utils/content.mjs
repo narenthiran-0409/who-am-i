@@ -1,4 +1,7 @@
+import { resolveProfileExperience } from "./experience.mjs";
+
 export function buildResume(profile, skills, journey) {
+  profile = resolveProfileExperience(profile, journey);
   const h = profile.resume.headings;
   return [
     profile.resume.sampleNotice,

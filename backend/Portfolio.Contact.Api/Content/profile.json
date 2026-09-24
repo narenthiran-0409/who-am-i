@@ -5,7 +5,7 @@
   "role": "Software Developer",
   "summary": [
     {
-      "text": "Software Developer with 3.5+ years of experience building "
+      "text": "Software Developer with {{experience}} of experience building "
     },
     {
       "text": "reliable enterprise applications",
@@ -22,7 +22,7 @@
   },
   "aboutRole": "Software Developer",
   "biography": [
-    "I'm a Software Developer with 3.5+ years of experience at Sierra Digital, building enterprise web applications and data-driven platforms. I work across backend development with ASP.NET Core, .NET 8 Web API, Entity Framework Core, Dapper, and SQL Server, and frontend development with React and JavaScript. I enjoy transforming complex workflows into secure, scalable, and intuitive products."
+    "I'm a Software Developer with {{experience}} of experience at Sierra Digital, building enterprise web applications and data-driven platforms. I work across backend development with ASP.NET Core, .NET 8 Web API, Entity Framework Core, Dapper, and SQL Server, and frontend development with React and JavaScript. I enjoy transforming complex workflows into secure, scalable, and intuitive products."
   ],
   "facts": [
     {
@@ -45,7 +45,7 @@
     },
     {
       "label": "EXPERIENCE",
-      "value": "3.5+ Years",
+      "value": "{{experience}}",
       "icon": "briefcase",
       "href": null
     },

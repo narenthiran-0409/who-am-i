@@ -1,0 +1,293 @@
+{
+  "site": {
+    "meta": {
+      "title": "string",
+      "description": "string",
+      "language": "string"
+    },
+    "navigation": {
+      "label": "string",
+      "open": "string",
+      "close": "string",
+      "skip": "string",
+      "items": [
+        {
+          "label": "string",
+          "target": "string"
+        }
+      ]
+    },
+    "sections": {
+      "about": {
+        "eyebrow": "string",
+        "title": "string"
+      },
+      "certifications": {
+        "eyebrow": "string",
+        "title": "string"
+      },
+      "skills": {
+        "eyebrow": "string",
+        "title": "string"
+      },
+      "journey": {
+        "eyebrow": "string",
+        "title": "string"
+      },
+      "projects": {
+        "eyebrow": "string",
+        "title": "string"
+      }
+    },
+    "labels": {
+      "personalData": "string",
+      "downloadResume": "string",
+      "viewCertificate": "string",
+      "viewProject": "string",
+      "previous": "string",
+      "next": "string",
+      "close": "string",
+      "certificateNotice": "string",
+      "projectSource": "string",
+      "projectsNavigation": "string"
+    },
+    "footer": {
+      "quote": "string",
+      "language": "string",
+      "translation": "string",
+      "translationLanguage": "string",
+      "showTranslation": "string",
+      "hideTranslation": "string"
+    }
+  },
+  "profile": {
+    "name": "string",
+    "greeting": "string",
+    "intro": "string",
+    "role": "string",
+    "summary": [
+      {
+        "text": "string"
+      },
+      {
+        "text": "string",
+        "emphasis": "boolean"
+      }
+    ],
+    "heroImage": null,
+    "portrait": {
+      "src": "string",
+      "alt": "string"
+    },
+    "aboutRole": "string",
+    "biography": [
+      "string"
+    ],
+    "facts": [
+      {
+        "label": "string",
+        "value": "string",
+        "icon": "string",
+        "href": null
+      },
+      {
+        "label": "string",
+        "value": "string",
+        "icon": "string",
+        "href": "string"
+      }
+    ],
+    "socialLinks": [
+      {
+        "label": "string",
+        "icon": "string",
+        "href": "string"
+      }
+    ],
+    "resume": {
+      "url": null,
+      "filename": "string",
+      "sampleNotice": null,
+      "headings": {
+        "about": "string",
+        "skills": "string",
+        "experience": "string",
+        "education": "string",
+        "contact": "string"
+      },
+      "generatedUrl": "string"
+    },
+    "heroVideo": {
+      "src": "string",
+      "fallbackImage": "string",
+      "accessibleLabel": "string",
+      "alt": "string",
+      "width": "number",
+      "height": "number"
+    }
+  },
+  "certifications": [
+    {
+      "id": "string",
+      "title": "string",
+      "description": "string",
+      "tags": [
+        "string"
+      ],
+      "icon": "string",
+      "badge": {
+        "src": "string",
+        "alt": "string"
+      },
+      "image": {
+        "src": "string",
+        "alt": "string"
+      },
+      "credentialUrl": "string"
+    }
+  ],
+  "skills": [
+    {
+      "id": "string",
+      "name": "string",
+      "category": "string",
+      "icon": "string"
+    }
+  ],
+  "journey": {
+    "educationLabel": "string",
+    "experienceLabel": "string",
+    "timelineLabels": {
+      "currentEducation": "string",
+      "pastEducation": "string",
+      "currentExperience": "string",
+      "pastExperience": "string",
+      "expand": "string",
+      "collapse": "string"
+    },
+    "education": [
+      {
+        "id": "string",
+        "title": "string",
+        "organization": "string",
+        "period": "string",
+        "description": "string",
+        "logo": {
+          "src": "string",
+          "alt": "string"
+        },
+        "icon": "string"
+      }
+    ],
+    "experience": [
+      {
+        "id": "string",
+        "history": [
+          {
+            "id": "string",
+            "title": "string",
+            "description": "string",
+            "period": null
+          }
+        ],
+        "title": "string",
+        "organization": "string",
+        "period": "string",
+        "highlights": [
+          "string"
+        ],
+        "logo": {
+          "src": "string",
+          "alt": "string"
+        },
+        "icon": "string"
+      }
+    ]
+  },
+  "projects": {
+    "enabled": "boolean",
+    "items": [
+      {
+        "id": "string",
+        "title": "string",
+        "description": "string",
+        "tags": [
+          "string"
+        ],
+        "image": null,
+        "projectUrl": "string",
+        "sourceUrl": "string"
+      },
+      {
+        "id": "string",
+        "title": "string",
+        "description": "string",
+        "tags": [
+          "string"
+        ],
+        "image": null,
+        "projectUrl": null,
+        "sourceUrl": null
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "string",
+    "title": "string",
+    "description": "string",
+    "headingLead": "string",
+    "headingAccent": "string",
+    "cardEyebrow": "string",
+    "cardTitle": "string",
+    "cardDescription": "string",
+    "cardIcon": "string",
+    "submit": "string",
+    "sending": "string",
+    "helper": "string",
+    "characters": "string",
+    "honeypotLabel": "string",
+    "states": {
+      "idle": "string",
+      "validating": "string",
+      "sending": "string",
+      "success": "string",
+      "error": "string"
+    },
+    "feedback": {
+      "success": "string",
+      "validation": "string",
+      "network": "string",
+      "timeout": "string",
+      "uncertain": "string",
+      "pending": "string",
+      "rateLimited": "string",
+      "unavailable": "string"
+    },
+    "fields": [
+      {
+        "name": "string",
+        "icon": "string",
+        "label": "string",
+        "placeholder": "string",
+        "type": "string",
+        "autocomplete": "string",
+        "maxLength": "number"
+      },
+      {
+        "name": "string",
+        "icon": "string",
+        "label": "string",
+        "placeholder": "string",
+        "type": "string",
+        "maxLength": "number",
+        "wide": "boolean"
+      }
+    ],
+    "errors": {
+      "name": "string",
+      "email": "string",
+      "subject": "string",
+      "message": "string"
+    }
+  }
+}

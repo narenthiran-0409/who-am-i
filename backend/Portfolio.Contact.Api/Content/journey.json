@@ -12,72 +12,90 @@
   "education": [
     {
       "id": "mca",
-      "title": "Master of Computer Applications (M.C.A)",
+      "title": "Master of Computer Applications (M.C.A.)",
       "organization": "Bharathiar University, Coimbatore",
-      "period": "2025 - present",
-      "description": "Enhanced technical skills and gained deeper insights into software development and enterprise solutions.",
+      "period": "2025 - Present",
+      "description": "Advancing my expertise in software development, computing technologies, and enterprise application design.",
       "logo": {
         "src": "/assets/education/bharathiyar.png",
         "alt": "Bharathiar University logo"
       },
       "icon": "school"
-    },{
+    },
+    {
       "id": "bsc-ct",
-      "title": "B.Sc in Computer Technology",
+      "title": "B.Sc. Computer Technology",
       "organization": "Rathinam College of Arts and Science, Coimbatore",
       "period": "2019 - 2022",
-      "description": "Built a strong foundation in computer science and programming before moving into software development.",
+      "description": "Built a strong foundation in computer science, programming, databases, and software development.",
       "logo": {
         "src": "/assets/education/rathinam.png",
         "alt": "Rathinam College of Arts and Science logo"
       },
       "icon": "school"
-    },{
+    },
+    {
       "id": "sslc-hsc",
       "title": "SSLC & HSC",
-      "organization": "R.K.Sree Rangammal Kalvi Nilayam, Coimbatore",
+      "organization": "R.K. Sree Rangammal Kalvi Nilayam, Coimbatore",
       "period": "2016 - 2019",
-      "description": "Completed my secondary and higher secondary education with a focus on science and mathematics.",
+      "description": "Completed secondary and higher secondary education with a focus on science and mathematics.",
       "logo": {
         "src": "/assets/education/RKS-institutions-logo-02.png",
-        "alt": "R.K.Sree Rangammal Kalvi Nilayam logo"
+        "alt": "R.K. Sree Rangammal Kalvi Nilayam logo"
       },
       "icon": "school"
     }
   ],
-"experience": [
-  {
-    "id": "sierra-digital",
-    "history": [
-      {
-        "id": "sierra-software-developer",
-        "title": "Software Developer",
-        "description": "Developed and maintained enterprise applications using C#, VB.NET, ASP.NET MVC, WPF, Web APIs, and SQL Server, including API integrations, database configuration, data migration, and operational reporting.",
-        "period": null
+  "experience": [
+    {
+      "id": "sierra-digital",
+      "title": "Senior Software Developer",
+      "organization": "Sierra Digital, Coimbatore",
+      "period": "2022 - Present",
+      "history": [
+        {
+          "id": "sierra-software-developer",
+          "title": "Software Developer",
+          "period": "Feb 2023 - Jan 2026",
+          "description": "Developed and maintained enterprise applications using C#, VB.NET, ASP.NET MVC, WPF, Web APIs, and SQL Server, with hands-on experience in API integrations, database configuration, data migration, and operational reporting.",
+          "roleDates": {
+            "start": "2023-02",
+            "end": "2026-01"
+          }
+        },
+        {
+          "id": "sierra-technical-trainee",
+          "title": "Technical Trainee",
+          "period": "Jul 2022 - Feb 2023",
+          "description": "Built a strong foundation in .NET development through hands-on work with C#, VB.NET, ASP.NET MVC, WPF, SQL Server, debugging, and enterprise application development practices.",
+          "roleDates": {
+            "start": "2022-07",
+            "end": "2023-02"
+          }
+        }
+      ],
+      "highlights": [
+        "Build and maintain scalable enterprise applications using .NET, React, SQL Server, and modern web technologies.",
+        "Design, develop, and integrate secure Web APIs, backend services, data workflows, dashboards, and cloud-connected solutions.",
+        "Configure databases, perform schema and field mapping, and implement API-level validation and automated testing for enterprise data workflows.",
+        "Execute client data migrations through SaaS Web APIs while maintaining data integrity, validation standards, and client-specific business requirements.",
+        "Develop operational reports and data-driven solutions that support business processes and technical decision-making.",
+        "Collaborate with development and QA teams through code reviews, debugging, issue resolution, testing, and Git-based source control."
+      ],
+      "logo": {
+        "src": "/assets/experience/sierralogo.png",
+        "alt": "Sierra Digital logo"
       },
-      {
-        "id": "sierra-technical-trainee",
-        "title": "Technical Trainee",
-        "description": "Built a strong foundation in .NET development, C#, VB.NET, ASP.NET MVC, WPF, SQL Server, debugging, and enterprise application development practices.",
-        "period": null
+      "icon": "briefcase",
+      "roleDates": {
+        "start": "2026-02",
+        "end": null
+      },
+      "employmentDates": {
+        "start": "2022-07",
+        "end": null
       }
-    ],
-    "title": "Senior Software Developer",
-    "organization": "Sierra Digital, Coimbatore",
-    "period": "2022 - Present",
-    "highlights": [
-      "Build and maintain enterprise business applications using .NET, React, SQL Server, and modern web technologies.",
-      "Develop and integrate secure Web APIs, backend services, data workflows, dashboards, and cloud-connected solutions.",
-      "Configure databases and perform schema mapping for enterprise master data, with API-level validation and unit testing.",
-      "Implement client data migrations through SaaS Web APIs while maintaining data integrity and client-specific requirements.",
-      "Develop operational reports and data-driven solutions to support business and technical requirements.",
-      "Collaborate with QA and development teams, participate in code reviews, troubleshoot application issues, and manage source code using Git."
-    ],
-    "logo": {
-      "src": "/assets/experience/sierralogo.png",
-      "alt": "Sierra Digital logo"
-    },
-    "icon": "briefcase"
-  }
-]
+    }
+  ]
 }

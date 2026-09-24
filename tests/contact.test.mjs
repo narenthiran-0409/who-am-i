@@ -27,7 +27,7 @@ test("contact sends JSON and a stable key to API, never mailto", async () => {
 });
 for (const [status, body, expected] of [
   [400, { errors: { Email: ["Invalid"] } }, "validation"],
-  [409, {}, "pending"], [429, {}, "rateLimited"],
+  [409, {}, "pending"], [409, { code: "pending" }, "pending"], [409, { code: "conflict" }, "pending"], [429, {}, "rateLimited"],
   [503, { code: "delivery_uncertain" }, "uncertain"],
   [503, {}, "unavailable"], [200, { status: "fake-success" }, "unavailable"],
 ]) test(`contact handles ${status}/${expected} without false success`, async () => {
@@ -36,4 +36,13 @@ for (const [status, body, expected] of [
 test("network and timeout failures are distinguished", async () => {
   for (const [failure, code] of [[new TypeError("Failed to fetch"), "network"], [new DOMException("Aborted", "AbortError"), "timeout"]])
     await assert.rejects(sendContact(valid, "key", { fetcher: async () => { throw failure; } }), error => error.code === code);
+});
+
+test("409 is success only with explicit prior acceptance; never resends automatically", async () => {
+  for (const body of [{ status: "accepted", reference: "existing" }, { code: "already_accepted" }, { code: "already_delivered" }]) {
+    let calls = 0;
+    const result = await sendContact(valid, "same-key", { fetcher: async () => { calls++; return Response.json(body, { status: 409 }); } });
+    assert.deepEqual(result, body);
+    assert.equal(calls, 1);
+  }
 });

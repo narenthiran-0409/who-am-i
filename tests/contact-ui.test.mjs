@@ -44,7 +44,7 @@ test("invalid form focuses the first error without calling API", async () => {
     assert.equal(calls, 0);
     assert.equal(document.activeElement.id, "contact-name");
     assert.equal(document.querySelectorAll('[aria-invalid="true"]').length, 4);
-    assert.match(document.querySelector('[role="status"]').textContent, /ACTION_REQUIRED/);
+    assert.match(document.querySelector('[role="alert"]').textContent, /ACTION_REQUIRED/);
   } finally { await ui.close(); }
 });
 test("sending locks duplicate clicks, then success clears fields and announces result", async () => {
@@ -58,11 +58,18 @@ test("sending locks duplicate clicks, then success clears fields and announces r
     assert.equal(document.querySelector('button[type="submit"]').disabled, true);
     assert.equal(ui.form.getAttribute("aria-busy"), "true");
     assert.equal(ui.form.elements.namedItem("message").readOnly, true);
-    assert.match(document.querySelector('[role="status"]').textContent, /TRANSMITTING/);
+    assert.match(document.querySelector('button[type="submit"]').textContent, /TRANSMITTING\.\.\./);
+    assert.equal(document.querySelector('[role="status"]'), null);
     await act(async () => resolve(Response.json({ status: "accepted", reference: "test" })));
     assert.equal(ui.form.elements.namedItem("message").value, "");
     assert.equal(document.querySelector('button[type="submit"]').disabled, false);
-    assert.match(document.querySelector('[role="status"]').textContent, /MESSAGE_SENT/);
+    for (const field of ["name", "email", "subject", "message"]) assert.equal(ui.form.elements.namedItem(field).value, "");
+    assert.match(document.querySelector('[role="status"]').textContent, /MESSAGE_RECEIVED/);
+    assert.equal(document.querySelector('.contact-status'), null);
+    assert.equal(document.querySelector('.contact-snackbar-message').textContent, "Successfully landed in my inbox — no 404s here 😎");
+    ui.form.elements.namedItem("name").value = "Another visitor";
+    await act(async () => ui.form.elements.namedItem("name").dispatchEvent(new dom.window.Event("input", { bubbles: true })));
+    assert.ok(document.querySelector('[role="status"]'));
   } finally { await ui.close(); }
 });
 test("network failure preserves input and retry reuses request key", async () => {
@@ -72,8 +79,9 @@ test("network failure preserves input and retry reuses request key", async () =>
   try {
     fill(ui.form); await act(async () => ui.submit());
     assert.equal(ui.form.elements.namedItem("message").value, "A portfolio inquiry");
-    assert.match(document.querySelector('[role="status"]').textContent, /connection was interrupted/);
-    await act(async () => ui.submit());
+    assert.match(document.querySelector('[role="alert"]').textContent, /connection was interrupted/);
+    assert.equal(document.querySelector('[role="status"]'), null);
+    await act(async () => document.querySelector('.contact-snackbar-retry').click());
     assert.equal(keys.length, 2); assert.equal(keys[0], keys[1]);
   } finally { await ui.close(); }
 });
@@ -86,5 +94,29 @@ test("backend field errors are mapped without rendering server HTML", async () =
     assert.equal(document.activeElement.id, "contact-email");
     assert.equal(document.querySelector("script"), null);
     assert.equal(document.getElementById("error-email").textContent, data.errors.email);
+  } finally { await ui.close(); }
+});
+
+test("already accepted 409 clears the form and shows the same success snackbar", async () => {
+  let calls = 0;
+  globalThis.fetch = async () => { calls++; return Response.json({ status: "accepted", reference: "existing" }, { status: 409 }); };
+  const ui = await mount();
+  try {
+    fill(ui.form); await act(async () => ui.submit());
+    assert.equal(calls, 1);
+    assert.equal(ui.form.elements.namedItem("message").value, "");
+    assert.match(document.querySelector('[role="status"]').textContent, /MESSAGE_RECEIVED/);
+    assert.equal(document.querySelector('[role="alert"]'), null);
+  } finally { await ui.close(); }
+});
+
+test("pending 409 preserves the form and does not announce success", async () => {
+  globalThis.fetch = async () => Response.json({ code: "pending" }, { status: 409 });
+  const ui = await mount();
+  try {
+    fill(ui.form); await act(async () => ui.submit());
+    assert.equal(ui.form.elements.namedItem("message").value, "A portfolio inquiry");
+    assert.equal(document.querySelector('[role="status"]'), null);
+    assert.match(document.querySelector('[role="alert"]').textContent, /still being processed/);
   } finally { await ui.close(); }
 });

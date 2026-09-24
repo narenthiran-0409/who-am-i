@@ -1,6 +1,7 @@
 import { paths } from "../src/utils/icons.mjs";
 import { contactLimits } from "../src/utils/contact.mjs";
 import { buildNavigation } from "../src/utils/content.mjs";
+import { monthIndex } from "../src/utils/timeline.mjs";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -44,6 +45,17 @@ required(data.profile.name, "profile.name");
 for (const key of ["expand", "collapse", "currentEducation", "pastEducation", "currentExperience", "pastExperience"])
   required(data.journey.timelineLabels?.[key], "journey.timelineLabels." + key);
 for (const item of data.journey.experience) {
+  if (item.employmentDates != null) {
+    const { start, end } = item.employmentDates;
+    if (monthIndex(start) === null || (end !== null && (monthIndex(end) === null || monthIndex(end) < monthIndex(start))))
+      fail("journey." + item.id + ".employmentDates requires YYYY-MM dates in chronological order, or null for an ongoing end");
+  }
+  for (const role of [item, ...(Array.isArray(item.history) ? item.history : [])]) {
+    if (role.roleDates == null) continue;
+    const { start, end } = role.roleDates;
+    if (monthIndex(start) === null || (end !== null && (monthIndex(end) === null || monthIndex(end) < monthIndex(start))))
+      fail("journey." + role.id + ".roleDates requires YYYY-MM dates in chronological order, or null for an ongoing end");
+  }
   if (item.history == null) continue;
   if (!Array.isArray(item.history)) fail("journey." + item.id + ".history must be an array");
   const roleIds = new Set([item.id]);
